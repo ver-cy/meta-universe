@@ -8,7 +8,7 @@
 **Version:** 2.0 (Draft)  
 **Status:** Working Draft  
 **Normative References:** Meta-Universe Constitution (MUC), MMAS-Core, Versioning  
-**Informative References:** Extension-Model, MMAS-Conformance, Meta-Universe Federation Protocol (MUFP)  
+**Informative References:** Extension-Model, MMAS-Conformance, Meta-Universe Federation Protocol (MUFP), Model-Traversal-and-Layout, Data-Mastership  
 **Copyright:** © Orkestron.AI  
 **License:** Apache-2.0
 
@@ -62,9 +62,11 @@ Every Meta-Model SHOULD follow the canonical structure below.
 meta-model/
 │
 ├── README.md
+├── BOOTSTRAP.md            # operating instructions: how to read this model (read first)
 ├── LICENSE
 ├── CHANGELOG.md
 ├── manifest.yaml
+├── sources.yaml            # Data Mastership Register: System of Record per dataset
 │
 ├── bundles/
 │   ├── <bundle-name>/
@@ -80,6 +82,9 @@ meta-model/
 │   │   └── ...
 │   └── ...
 │
+├── canon/                  # canonical source texts the model treats as ground truth
+├── raw/                    # unprocessed harvested captures from external systems (never hand-edited)
+├── artifacts/              # generated, regenerable outputs (never authored)
 ├── imports/
 ├── mappings/
 ├── schemas/
@@ -90,6 +95,8 @@ meta-model/
 ```
 
 Equivalent layouts MAY be used if semantic organization is preserved.
+
+The traversal contract over this structure (deterministic bundle/layer walk order, total file classification, the completeness check) and the reserved meanings of `BOOTSTRAP.md`, `canon/`, `raw/` and `artifacts/` are defined normatively in [Model-Traversal-and-Layout](Model-Traversal-and-Layout.md). The `sources.yaml` register and the rules for deciding whether the model or an external system (a wiki, a tracker, a database) is the master of a dataset are defined in [Data-Mastership](Data-Mastership.md).
 
 ---
 

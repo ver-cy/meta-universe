@@ -7,6 +7,20 @@ This project follows the evolution and versioning rules defined in
 ## [Unreleased]
 
 ### Added
+- **Model-Traversal-and-Layout** (Normative, MU-V2-ARCH-017,
+  `02-architecture/`): the lossless traversal contract for Meta-Model
+  repositories: single entry point (`BOOTSTRAP.md` + `manifest.yaml`), declared
+  bundle/layer walk order, total file classification (kind + origin), the
+  completeness rule (every file enumerated, well-known or excluded; orphans fail
+  V1), and reserved locations `canon/`, `raw/`, `artifacts/`, `bootstrap/`.
+- **Data-Mastership** (Normative, MU-V2-ARCH-018, `02-architecture/`): Systems
+  of Record for Meta-Models: one master per dataset; three lawful patterns
+  (model-mastered with write-back projections, external-mastered with harvested
+  mirrors, partitioned); the `sources.yaml` Mastership Register; flow, freshness,
+  conflict and AI-agent write rules.
+- [MMAS-Package](02-architecture/MMAS-Package.md) §4 canonical tree extended
+  with `BOOTSTRAP.md`, `sources.yaml`, `canon/`, `raw/`, `artifacts/` and
+  pointers to the two new standards.
 - **Case studies** (Informative, `06-ecosystem/`): [The Orkestron Ecosystem](06-ecosystem/Case-Study-Orkestron-Ecosystem.md)
   (MU-V2-ECO-010): a production ecosystem of meta-models (AISMM, PLMM, BKM,
   agent contracts) and federated realm projections; and

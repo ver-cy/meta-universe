@@ -4,7 +4,7 @@ specification: Meta-Universe
 version: "2.0"
 status: "Working Draft"
 license: Apache-2.0
-documentCount: 86
+documentCount: 88
 documents:
   - id: MU-V2-ARCH-001
     title: "Meta-Model Architecture Standard - Core Architecture"
@@ -86,6 +86,16 @@ documents:
     class: Normative
     status: "Working Draft"
     path: 02-architecture/Meta-Model-Composition.md
+  - id: MU-V2-ARCH-017
+    title: "Meta-Model Architecture Standard - Lossless Traversal and Well-Known Locations"
+    class: Normative
+    status: "Working Draft"
+    path: 02-architecture/Model-Traversal-and-Layout.md
+  - id: MU-V2-ARCH-018
+    title: "Meta-Model Architecture Standard - Data Mastership and Systems of Record"
+    class: Normative
+    status: "Working Draft"
+    path: 02-architecture/Data-Mastership.md
   - id: MU-V2-ASSET-000
     title: "Canonical Diagram Assets"
     class: Informative

@@ -20,6 +20,8 @@ This guide explains the recommended Meta-Universe repository structure and the r
 
 The repository layout is designed to be understandable by both humans and AI agents while supporting long-term evolution, traceability and semantic federation.
 
+The normative counterparts of this guide are [MMAS-Package](../02-architecture/MMAS-Package.md) (the canonical layout), [Model-Traversal-and-Layout](../02-architecture/Model-Traversal-and-Layout.md) (the lossless walk contract and reserved locations for bootstraps, canon, raw data and artifacts) and [Data-Mastership](../02-architecture/Data-Mastership.md) (which system is the master of each dataset).
+
 ---
 
 # 2. Design Goals
