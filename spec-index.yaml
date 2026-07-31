@@ -4,7 +4,7 @@ specification: Meta-Universe
 version: "2.0"
 status: "Working Draft"
 license: Apache-2.0
-documentCount: 84
+documentCount: 86
 documents:
   - id: MU-V2-ARCH-001
     title: "Meta-Model Architecture Standard - Core Architecture"
@@ -221,6 +221,16 @@ documents:
     class: Informative
     status: "Working Draft"
     path: 06-ecosystem/Connector-Catalogue.md
+  - id: MU-V2-ECO-010
+    title: "Case Study: The Orkestron Ecosystem as a Working Meta-Universe"
+    class: Informative
+    status: "Working Draft"
+    path: 06-ecosystem/Case-Study-Orkestron-Ecosystem.md
+  - id: MU-V2-ECO-011
+    title: "Case Study: A Polity as a Large Meta-Universe (Axiacracy / Meta-Orchestrator State)"
+    class: Informative
+    status: "Working Draft"
+    path: 06-ecosystem/Case-Study-Axiacracy-MOS.md
   - id: MU-V2-EX-000
     title: "Examples - Policy and Plan"
     class: Informative
@@ -426,3 +436,4 @@ documents:
     class: Informative
     status: "Working Draft"
     path: 05-reference-architecture/MUDL.md
+

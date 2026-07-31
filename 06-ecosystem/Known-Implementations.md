@@ -127,6 +127,11 @@ Illustrative examples:
 
 These examples are informative and do not imply certification.
 
+Two implementations are documented in depth as case studies:
+
+- [Case Study: The Orkestron Ecosystem](Case-Study-Orkestron-Ecosystem.md): a production ecosystem of meta-models (AISMM, PLMM, BKM, agent contracts) and federated realm projections.
+- [Case Study: Axiacracy and the Meta-Orchestrator State](Case-Study-Axiacracy-MOS.md): a whole polity modelled as one Dimension with 38 namespaces; the largest known application of the standard.
+
 ---
 
 # 9. Publication

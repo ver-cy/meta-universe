@@ -4,6 +4,21 @@ All notable changes to the Meta-Universe specification are recorded here.
 This project follows the evolution and versioning rules defined in
 [Versioning](02-architecture/Versioning.md) and [Change-Process](01-constitution/Change-Process.md).
 
+## [Unreleased]
+
+### Added
+- **Case studies** (Informative, `06-ecosystem/`): [The Orkestron Ecosystem](06-ecosystem/Case-Study-Orkestron-Ecosystem.md)
+  (MU-V2-ECO-010): a production ecosystem of meta-models (AISMM, PLMM, BKM,
+  agent contracts) and federated realm projections; and
+  [Axiacracy / Meta-Orchestrator State](06-ecosystem/Case-Study-Axiacracy-MOS.md)
+  (MU-V2-ECO-011): a whole polity modelled as one Dimension with 38 namespaces,
+  the largest known application of the standard.
+- **Seed entries** (Informative) in [Registered-Meta-Models](06-ecosystem/Registered-Meta-Models.md) §17:
+  first concrete registry references (AISMM 3.1, PLMM 0.1, BKM 0.4, the MOS
+  namespace family).
+- Case-study cross-references from [Known-Implementations](06-ecosystem/Known-Implementations.md) §8
+  and the README Ecosystem section.
+
 ## [2.0.0-draft] — Working Draft
 
 The first full standards-family release. Meta-Universe is no longer a single

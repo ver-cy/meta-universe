@@ -256,6 +256,21 @@ A dedicated **Federation of Registries** specification could formalize this mode
 
 ---
 
+# 17. Seed Entries (Informative)
+
+The registry concept above is ahead of its tooling: no live registry service exists yet. Until one does, this section records the first known registrable meta-models as informative seed entries. Each entry is a reference to an authoritative source, per §15.4.
+
+| Model | Publisher | Version | Kind | Source | Status |
+|-------|-----------|---------|------|--------|--------|
+| AISMM (AI-driven Software Meta-Model) | Orkestron.AI | 3.1 | Domain Meta-Model (software product) | [software-meta-model](https://github.com/orkestron-ai/software-meta-model) | Stable |
+| PLMM (Product Landscape Meta-Model) | Orkestron.AI | 0.1 | Enterprise Meta-Model (product landscape, federates AISMM) | [product-landscape-meta-model](https://github.com/orkestron-ai/product-landscape-meta-model) | Draft |
+| BKM (Base Knowledge Model) | Orkestron.AI | 0.4 | Foundation Meta-Model (professional knowledge as Semantic Packages) | private at time of writing | Draft |
+| MOS namespace family (Axiacracy / Meta-Orchestrator State) | Orkestron.AI | 0.1 | Government Meta-Models (38 namespaces: value substrate, polity, society, economy, civilization, runtime) | [meta-orchestrator-state](https://github.com/orkestron-ai/meta-orchestrator-state) | Draft |
+
+Context for these entries: [Case Study: The Orkestron Ecosystem](Case-Study-Orkestron-Ecosystem.md) and [Case Study: Axiacracy and the Meta-Orchestrator State](Case-Study-Axiacracy-MOS.md).
+
+---
+
 # Final Statement
 
 The Registered Meta-Models Registry provides a common discovery mechanism for interoperable semantic models across the Meta-Universe ecosystem.
