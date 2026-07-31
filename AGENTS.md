@@ -44,6 +44,17 @@ traceability. It is a specification, not a runtime.
 - `examples/federation-handshake/` — a MUFP message transcript.
 - `examples/interop/` — mapping to RDF/OWL, Schema.org, FHIR, FOAF.
 
+## Working ON a conformant model (not this spec repo)
+
+If you were pointed at a *model repository* (it has `BOOTSTRAP.md`,
+`manifest.yaml`, `sources.yaml`), your operating instructions are
+**`07-guides/Agent-Operations.md`**: read BOOTSTRAP → manifest → sources before
+content; walk bundles in declared order; write **only** to the dataset's
+declared master; never hand-edit `raw/`, mirrors or `artifacts/`; re-run the
+coverage walker after structural changes; refuse writes when mastership is
+undeclared. The connected human-readable map of the whole standard is
+**`00-foundation/Overview.md`**.
+
 ## Building an agent on Meta-Universe
 
 See **`07-guides/AI-Integration-Patterns.md`** and **`07-guides/AI-Agent-Guide.md`**:

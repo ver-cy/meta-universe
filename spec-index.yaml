@@ -4,7 +4,7 @@ specification: Meta-Universe
 version: "2.0"
 status: "Working Draft"
 license: Apache-2.0
-documentCount: 88
+documentCount: 90
 documents:
   - id: MU-V2-ARCH-001
     title: "Meta-Model Architecture Standard - Core Architecture"
@@ -351,6 +351,11 @@ documents:
     class: Informative
     status: "Working Draft"
     path: 00-foundation/FAQ.md
+  - id: MU-V2-FOUND-006
+    title: "Overview: The Complete, Connected Description of the Vercy Meta-Universe"
+    class: Informative
+    status: "Working Draft"
+    path: 00-foundation/Overview.md
   - id: MU-V2-GUIDE-001
     title: "First Steps - Entry Point into the Methodology"
     class: Entry Point
@@ -396,6 +401,11 @@ documents:
     class: Informative
     status: "Working Draft"
     path: 07-guides/AI-Integration-Patterns.md
+  - id: MU-V2-GUIDE-010
+    title: "Operating Instructions for AI Agents Working on a Conformant Model"
+    class: Informative
+    status: "Working Draft"
+    path: 07-guides/Agent-Operations.md
   - id: MU-V2-REFARCH-001
     title: "Overall Architecture"
     class: Informative

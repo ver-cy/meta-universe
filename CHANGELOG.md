@@ -22,6 +22,19 @@ This project follows the evolution and versioning rules defined in
   with `BOOTSTRAP.md`, `sources.yaml`, `canon/`, `raw/`, `artifacts/` and
   pointers to the two new standards.
 
+### Added (description, agents, learning)
+- **Overview** (Informative, MU-V2-FOUND-006, `00-foundation/`): the complete,
+  connected description of the whole standard: the idea, the M1-M4 layers, the
+  eight-room map, the life of a meta-model, reading paths per persona, honest
+  status. The single entry point for humans.
+- **Agent-Operations** (Informative, MU-V2-GUIDE-010, `07-guides/`): operating
+  instructions for AI agents working on a conformant model: cold-start,
+  authority-aware answering, write rules, harvest/publish recipes, refusal
+  conditions, team etiquette. [AGENTS.md](AGENTS.md) now routes agents to it.
+- **Vercy Learn** ([ver.cy/learn](https://ver.cy/learn/)): three structured
+  courses for humans (Foundations · Building a meta-model · Vercy for AI
+  agents; 15 lessons), maintained site-side, linked from the spec.
+
 ### Changed
 - Pilot feedback (first ARCH-017/018 pilot on a production AISMM model):
   [Model-Traversal-and-Layout](02-architecture/Model-Traversal-and-Layout.md)
