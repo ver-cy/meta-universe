@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://meta-universe.org/schemas/2.0/registry-entry.schema.json",
+  "title": "Registered Meta-Model Entry",
+  "description": "One entry of the live register (06-ecosystem/registry/entries/*.yaml). Registration is discovery, not storage: an entry references an authoritative source. Fields mirror Registered-Meta-Models sections 4 and 5.",
+  "type": "object",
+  "required": ["id", "name", "publisher", "owner", "version", "kind", "status", "license", "access", "purpose", "registered"],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(\\.[a-z0-9-]+)+$",
+      "description": "Stable registry identifier, dot-separated, publisher-prefixed (e.g. vercy.world-models). Never reused."
+    },
+    "name": { "type": "string" },
+    "publisher": { "type": "string", "description": "Who publishes the model (project or organization)." },
+    "owner": { "type": "string", "description": "The sovereign Owner of the model. Registration does not transfer ownership." },
+    "steward": { "type": "string", "description": "The accountable human or team for freshness, quality and security." },
+    "version": { "type": "string", "description": "Current version of the model (semver or the model's own scheme)." },
+    "kind": {
+      "type": "string",
+      "enum": ["foundation", "domain", "enterprise", "industry", "government", "community", "example-library"],
+      "description": "Registry scope class per Registered-Meta-Models section 2."
+    },
+    "status": { "type": "string", "enum": ["draft", "stable", "deprecated", "retired"] },
+    "license": { "type": "string", "description": "SPDX identifier where possible (e.g. Apache-2.0)." },
+    "access": {
+      "type": "string",
+      "enum": ["public", "restricted"],
+      "description": "public: source openly reachable. restricted: readable only with the Owner's permission; source coordinates may be omitted."
+    },
+    "source": {
+      "type": "object",
+      "required": ["repository"],
+      "additionalProperties": false,
+      "description": "The authoritative source (the master, per ARCH-018). Required when access is public.",
+      "properties": {
+        "repository": { "type": "string", "format": "uri" },
+        "path": { "type": "string", "description": "Path inside the repository if the model is not at the root." },
+        "ref": { "type": "string", "description": "Pinned branch, tag or commit for reproducible download." }
+      }
+    },
+    "conformance": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "muc": { "type": "string", "description": "Supported MUC version." },
+        "mmas": { "type": "string", "description": "Supported MMAS version." },
+        "mufp": { "type": "string", "description": "Supported MUFP version." },
+        "profile": { "type": "string", "description": "Claimed conformance profile (e.g. Meta-Universe Core)." },
+        "arch017": { "type": "boolean", "description": "Carries the ARCH-017 traversal contract (BOOTSTRAP.md + manifest)." },
+        "arch018": { "type": "boolean", "description": "Carries the ARCH-018 mastership register (sources.yaml)." },
+        "fcd": { "type": "string", "enum": ["core", "traceable", "measured"], "description": "Claimed FCD conformance level (VC-FCD-001)." }
+      }
+    },
+    "purpose": { "type": "string", "description": "One or two sentences: what the model is for." },
+    "domains": { "type": "array", "items": { "type": "string" }, "description": "Supported domains (free vocabulary, lowercase)." },
+    "primary_namespace": { "type": "string" },
+    "dependencies": { "type": "array", "items": { "type": "string" }, "description": "Registry ids of models this one builds on." },
+    "imports": { "type": "array", "items": { "type": "string" }, "description": "External standards imported (names as in external-models.csv)." },
+    "docs": { "type": "string", "format": "uri", "description": "Human documentation entry point." },
+    "fingerprint": { "type": "string", "description": "Self-declared Semantic Fingerprint of the registered version." },
+    "registered": { "type": "string", "format": "date" },
+    "notes": { "type": "string" }
+  }
+}

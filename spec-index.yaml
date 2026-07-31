@@ -4,7 +4,7 @@ specification: Meta-Universe
 version: "2.0"
 status: "Working Draft"
 license: Apache-2.0
-documentCount: 90
+documentCount: 91
 documents:
   - id: MU-V2-ARCH-001
     title: "Meta-Model Architecture Standard - Core Architecture"
@@ -236,6 +236,11 @@ documents:
     class: Informative
     status: "Working Draft"
     path: 06-ecosystem/Case-Study-Orkestron-Ecosystem.md
+  - id: MU-V2-ECO-010
+    title: "The Vercy Repository Family"
+    class: Informative
+    status: "Working Draft"
+    path: 06-ecosystem/Vercy-Repositories.md
   - id: MU-V2-ECO-011
     title: "Case Study: A Polity as a Large Meta-Universe (Axiacracy / Meta-Orchestrator State)"
     class: Informative

@@ -234,6 +234,21 @@ New to the project? The **[FAQ](00-foundation/FAQ.md)** answers the most common 
 
 ---
 
+## The Vercy repository family
+
+This repository is the standard. Around it:
+
+| Repository | What it holds |
+|---|---|
+| [meta-universe](https://github.com/ver-cy/meta-universe) | The standard itself, plus the [live register of meta-models](06-ecosystem/registry/) (search, entries, registration flow) |
+| [world-models](https://github.com/ver-cy/world-models) | The example library: 145 meta-models describing the world of people and events on Earth, 7 deepened to full normative specifications |
+| [fcd](https://github.com/ver-cy/fcd) | Full Context Development (VC-FCD-001): every change made with full model context, every learning written back |
+| processes (in preparation) | The operating palette: processes that keep a Universe functioning as the digital reflection of reality, with BPMN diagrams |
+
+The map of the family and the path of a model from publication to use in another Dimension: [Vercy-Repositories](06-ecosystem/Vercy-Repositories.md).
+
+---
+
 ## Contributing
 
 Meta-Universe is an open specification. Contributions, reviews and proposals are welcome — start with **[CONTRIBUTING.md](CONTRIBUTING.md)**, the project **[GOVERNANCE.md](GOVERNANCE.md)**, the **[Code of Conduct](CODE_OF_CONDUCT.md)** and the **[Security Policy](SECURITY.md)**. Changes flow through the [Change Process](01-constitution/Change-Process.md); please read the [Principles](00-foundation/Principles.md) and the [Constitution](01-constitution/Meta-Universe-Constitution.md) first — every contribution must remain consistent with both.

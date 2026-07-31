@@ -1,0 +1,24 @@
+# Registered Meta-Model entry (validates against ../entry.schema.json)
+id: orkestron.plmm
+name: PLMM (Product Landscape Meta-Model)
+publisher: Orkestron.AI
+owner: Orkestron.AI
+version: "0.1"
+kind: enterprise
+status: draft
+license: Apache-2.0
+access: public
+source:
+  repository: https://github.com/orkestron-ai/product-landscape-meta-model
+  ref: main
+conformance:
+  muc: "2.0"
+  mmas: "2.0"
+purpose: >
+  The federation meta-model above AISMM: 11 layers describing an organization's
+  landscape of products, their relations, shared assets and portfolio dynamics.
+domains: [enterprise, product-portfolio]
+primary_namespace: orkestron.plmm
+dependencies: [orkestron.aismm]
+docs: https://github.com/orkestron-ai/product-landscape-meta-model#readme
+registered: "2026-07-31"

@@ -1,0 +1,27 @@
+# Registered Meta-Model entry (validates against ../entry.schema.json)
+id: orkestron.aismm
+name: AISMM (AI-driven Software Meta-Model)
+publisher: Orkestron.AI
+owner: Orkestron.AI
+version: "3.1"
+kind: domain
+status: stable
+license: Apache-2.0
+access: public
+source:
+  repository: https://github.com/orkestron-ai/software-meta-model
+  ref: main
+conformance:
+  muc: "2.0"
+  mmas: "2.0"
+  fcd: measured
+purpose: >
+  The authoritative semantic description of a software product: 10 bundles and
+  56 layers from product core to knowledge traceability, designed so humans and
+  AI agents share one product context.
+domains: [software, product-management, development]
+primary_namespace: orkestron.aismm
+dependencies: []
+docs: https://github.com/orkestron-ai/software-meta-model#readme
+registered: "2026-07-31"
+notes: The origin and reference implementation of Full Context Development (VC-FCD-001).

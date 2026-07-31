@@ -256,12 +256,13 @@ A dedicated **Federation of Registries** specification could formalize this mode
 
 ---
 
-# 17. Seed Entries (Informative)
+# 17. The Live Register and Seed Entries
 
-The registry concept above is ahead of its tooling: no live registry service exists yet. Until one does, this section records the first known registrable meta-models as informative seed entries. Each entry is a reference to an authoritative source, per §15.4.
+The registry defined above is live as machine-readable data in [`registry/`](registry/): one YAML entry per model under [`registry/entries/`](registry/entries/) validating against [`registry/entry.schema.json`](registry/entry.schema.json), a flat searchable index in [`registry/registered-models.csv`](registry/registered-models.csv), and the registration flow (pull request based) in [`registry/README.md`](registry/README.md). The register files are canonical; the table below is an informative snapshot. Each entry is a reference to an authoritative source, per §15.4.
 
 | Model | Publisher | Version | Kind | Source | Status |
 |-------|-----------|---------|------|--------|--------|
+| Vercy world-model library | Vercy project | 0.1.0 | Example library (the world of people and events on Earth: 145-model catalogue, 7 deep specifications) | [world-models](https://github.com/ver-cy/world-models) | Draft |
 | AISMM (AI-driven Software Meta-Model) | Orkestron.AI | 3.1 | Domain Meta-Model (software product) | [software-meta-model](https://github.com/orkestron-ai/software-meta-model) | Stable |
 | PLMM (Product Landscape Meta-Model) | Orkestron.AI | 0.1 | Enterprise Meta-Model (product landscape, federates AISMM) | [product-landscape-meta-model](https://github.com/orkestron-ai/product-landscape-meta-model) | Draft |
 | BKM (Base Knowledge Model) | Orkestron.AI | 0.4 | Foundation Meta-Model (professional knowledge as Semantic Packages) | private at time of writing | Draft |

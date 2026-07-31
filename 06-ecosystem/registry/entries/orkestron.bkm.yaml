@@ -1,0 +1,19 @@
+# Registered Meta-Model entry (validates against ../entry.schema.json)
+id: orkestron.bkm
+name: BKM (Base Knowledge Model)
+publisher: Orkestron.AI
+owner: Orkestron.AI
+version: "0.4"
+kind: foundation
+status: draft
+license: Apache-2.0
+access: restricted
+purpose: >
+  Professional knowledge as Semantic Packages: the foundation model a
+  Professional Agent loads to act as a specialist in a domain, with domain
+  packs (for example event management) conforming to it.
+domains: [knowledge, professional-agents]
+primary_namespace: orkestron.bkm
+dependencies: []
+registered: "2026-07-31"
+notes: Restricted at time of registration; readable only with the Owner's permission.

@@ -1,0 +1,35 @@
+# Registered Meta-Model entry (validates against ../entry.schema.json)
+id: vercy.world-models
+name: Vercy world-model library
+publisher: Vercy project
+owner: Vercy project
+steward: Vercy project
+version: 0.1.0
+kind: example-library
+status: draft
+license: Apache-2.0
+access: public
+source:
+  repository: https://github.com/ver-cy/world-models
+  ref: main
+conformance:
+  muc: "2.0"
+  mmas: "2.0"
+  arch017: true
+  arch018: true
+purpose: >
+  An example corpus of meta-models describing the world of people and what
+  happens on planet Earth: a 145-model catalogue in 16 clusters plus 18 models
+  deepened to full normative specifications (security and ownership, registry
+  and ledger, actions and events, offense and enforcement, property, civic
+  layer, economy and markets).
+domains: [world, society, state, economy, security, property, health, democracy]
+primary_namespace: vercy.world
+dependencies: []
+imports: [gs1, ifc, fhir, iec-cim, dcat, w3c-org]
+docs: https://github.com/ver-cy/world-models#readme
+registered: "2026-07-31"
+notes: >
+  The Meta-Orchestrator State (MOS) is the reference Dimension consuming this
+  library; doctrine anchors in the deep specifications resolve to its
+  repository and can be rebound by any adopting Dimension.

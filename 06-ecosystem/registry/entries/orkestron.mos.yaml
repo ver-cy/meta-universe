@@ -1,0 +1,28 @@
+# Registered Meta-Model entry (validates against ../entry.schema.json)
+id: orkestron.mos
+name: MOS namespace family (Axiacracy / Meta-Orchestrator State)
+publisher: Orkestron.AI
+owner: Orkestron.AI
+version: "0.1"
+kind: government
+status: draft
+license: Apache-2.0
+access: public
+source:
+  repository: https://github.com/orkestron-ai/meta-orchestrator-state
+  path: methodology
+  ref: main
+conformance:
+  muc: "2.0"
+purpose: >
+  The government meta-model family of a polity governed by balancing
+  multidimensional value flows: the value substrate, polity, society, economy,
+  civilization and runtime namespaces, with doctrine (Axiacracy) as canon.
+domains: [government, state, value, governance]
+primary_namespace: orkestron.mos
+dependencies: [vercy.world-models]
+docs: https://github.com/orkestron-ai/meta-orchestrator-state#readme
+registered: "2026-07-31"
+notes: >
+  The reference Dimension for the Vercy world-model library: it consumes the
+  library and binds it to its own doctrine.
