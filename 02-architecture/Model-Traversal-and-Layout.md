@@ -69,6 +69,8 @@ Traversal order is declared top-down:
 - Each **bundle manifest** (`bundle.yaml`) SHALL declare the bundle's single semantic responsibility and the ordered list of its layers.
 - Each **layer manifest** (`layer.yaml`) SHALL enumerate the layer's content: files or glob patterns, each with a **kind** (§8) and a one-line **meaning**.
 
+Enumeration MAY be **centralized instead of per-layer**: a repository whose file names carry the kind by convention (for example `{kind}-{id}-{memo}.md`) MAY declare classification once, as an ordered list of match rules in the repository manifest (`kind_rules`): each rule maps a glob pattern to a kind and an origin (§9); the first matching rule wins. In such rules the placeholder `{prefix}` denotes the file-name segment before the first delimiter, so a single rule like `kind: "object/{prefix}"` classifies a whole naming convention. Centralized rules are equivalent to per-layer enumeration for the coverage check (§7); a file matched by no rule is an orphan either way.
+
 Ordering rules:
 
 - Bundles SHALL be ordered so that a bundle appears **after** every bundle it depends on (foundation first). Cyclic bundle dependencies are non-conforming.
@@ -120,7 +122,7 @@ Every enumerated file SHALL carry one kind. The base vocabulary:
 
 `object` · `relationship` · `event` · `contract` · `projection` · `canon` · `raw` · `artifact` · `mapping` · `import` · `schema` · `example` · `diagram` · `doc` · `tool` · `bootstrap` · `manifest`
 
-Kinds answer "what is this file *in the model*", not "what format is it". A CSV may be `raw` (an export), `artifact` (a computed index) or `object` (a definition table); the kind, not the extension, decides how a reader treats it. Ecosystems MAY refine the vocabulary with sub-kinds (`object/policy`, `doc/adr`) but SHALL preserve the base kind as prefix.
+Kinds answer "what is this file *in the model*", not "what format is it". A CSV may be `raw` (an export), `artifact` (a computed index) or `object` (a definition table); the kind, not the extension, decides how a reader treats it. Ecosystems MAY refine the vocabulary with sub-kinds (`object/policy`, `doc/adr`) but SHALL preserve the base kind as prefix. Sub-kinds MAY be derived mechanically from declared naming conventions via the `{prefix}` placeholder of §5.
 
 ---
 

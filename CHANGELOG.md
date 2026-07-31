@@ -21,6 +21,17 @@ This project follows the evolution and versioning rules defined in
 - [MMAS-Package](02-architecture/MMAS-Package.md) §4 canonical tree extended
   with `BOOTSTRAP.md`, `sources.yaml`, `canon/`, `raw/`, `artifacts/` and
   pointers to the two new standards.
+
+### Changed
+- Pilot feedback (first ARCH-017/018 pilot on a production AISMM model):
+  [Model-Traversal-and-Layout](02-architecture/Model-Traversal-and-Layout.md)
+  now blesses **centralized classification rules** (`kind_rules` in the
+  repository manifest with the `{prefix}` placeholder) as an equivalent
+  alternative to per-layer enumeration for convention-named files;
+  [Data-Mastership](02-architecture/Data-Mastership.md) register entries gained
+  a **`status` lifecycle field** (`active` / `declared` / `suspended` /
+  `retired`), making "mastership decided, flow not yet built" a lawful,
+  visible, validated state instead of hidden debt.
 - **Case studies** (Informative, `06-ecosystem/`): [The Orkestron Ecosystem](06-ecosystem/Case-Study-Orkestron-Ecosystem.md)
   (MU-V2-ECO-010): a production ecosystem of meta-models (AISMM, PLMM, BKM,
   agent contracts) and federated realm projections; and

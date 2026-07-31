@@ -118,6 +118,9 @@ Each entry SHALL declare:
 | `pipeline` | The harvester or publisher (tool, script, agent) that moves the data |
 | `cadence` | How often the flow runs; for mirrors, also `staleness_limit` |
 | `conflict_rule` | Restatement of who wins, plus escalation contact (`steward`) |
+| `status` | Lifecycle of the flow: `active` (default), `declared`, `suspended`, `retired` |
+
+**Declared entries.** Real models pass through a transitional state the register must be able to tell the truth about: mastership is decided but the flow is not yet built - a mirror location exists but has never been harvested, or a write-back is agreed but no pipeline publishes it. Such entries SHALL carry `status: declared`. A declared entry is lawful, but it is **open debt, not operation**: a declared mirror SHALL NOT be presented as fresh (it has no harvest time at all), and a declared write-back gives no drift protection. Hiding the transitional state by omitting the entry, or by marking it `active`, is non-conforming; the register exists precisely to make this state visible.
 
 Illustrative register with both Confluence directions:
 
@@ -188,7 +191,7 @@ These rules are what allow mixed human-and-agent teams to work on the same knowl
 
 # 11. Validation
 
-Structural validation (V1) SHALL check: the register exists, parses, and every declared `model_location` exists. Semantic validation (V2) SHOULD check: every mirror has provenance and freshness metadata; no file is writable under two entries; flows match masters (`master: external` never has `flow: model->external`). Runtime validation (V5) MAY check staleness limits against actual harvest history.
+Structural validation (V1) SHALL check: the register exists, parses, and every declared `model_location` exists. Semantic validation (V2) SHOULD check: every mirror has provenance and freshness metadata; no file is writable under two entries; flows match masters (`master: external` never has `flow: model->external`); and every `status: declared` entry is reported as open debt. Runtime validation (V5) MAY check staleness limits against actual harvest history, and SHOULD downgrade an entry whose declared cadence has never actually run to `declared`.
 
 ---
 
