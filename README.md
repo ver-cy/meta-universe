@@ -241,7 +241,7 @@ This repository is the standard. Around it:
 | Repository | What it holds |
 |---|---|
 | [meta-universe](https://github.com/ver-cy/meta-universe) | The standard itself, plus the [live register of meta-models](06-ecosystem/registry/) (search, entries, registration flow) |
-| [world-models](https://github.com/ver-cy/world-models) | The example library: 145 meta-models describing the world of people and events on Earth, 18 of them deepened into 7 normative specifications |
+| [world-models](https://github.com/ver-cy/world-models) | The example catalogue: 112 vendor-neutral meta-models describing the world of people and events on Earth, each described per the standard with its own bundles and layers |
 | [fcd](https://github.com/ver-cy/fcd) | Full Context Development (VC-FCD-001): every change made with full model context, every learning written back |
 | [processes](https://github.com/ver-cy/processes) | The operating palette: 81 processes in 7 families that keep a Universe functioning as the digital reflection of reality, with BPMN 2.0 diagrams and worked bootstrap examples |
 

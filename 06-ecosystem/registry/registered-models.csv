@@ -1,5 +1,5 @@
 id,name,publisher,version,kind,status,license,access,domains,source,registered
-vercy.world-models,Vercy world-model library,Vercy project,0.1.0,example-library,draft,Apache-2.0,public,world;society;state;economy;security;property;health;democracy,https://github.com/ver-cy/world-models,2026-07-31
+vercy.world-models,Vercy world-model catalogue,Vercy project,0.2.0,example-library,draft,Apache-2.0,public,world;society;state;economy;security;property;health;democracy,https://github.com/ver-cy/world-models,2026-07-31
 orkestron.aismm,AISMM (AI-driven Software Meta-Model),Orkestron.AI,3.1,domain,stable,Apache-2.0,public,software;product-management;development,https://github.com/orkestron-ai/software-meta-model,2026-07-31
 orkestron.plmm,PLMM (Product Landscape Meta-Model),Orkestron.AI,0.1,enterprise,draft,Apache-2.0,public,enterprise;product-portfolio,https://github.com/orkestron-ai/product-landscape-meta-model,2026-07-31
 orkestron.mos,MOS namespace family (Axiacracy / Meta-Orchestrator State),Orkestron.AI,0.1,government,draft,Apache-2.0,public,government;state;value;governance,https://github.com/orkestron-ai/meta-orchestrator-state,2026-07-31

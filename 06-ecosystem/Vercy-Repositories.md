@@ -27,7 +27,7 @@ The design follows the standard's own rules: each repository has one semantic re
 | Repository | Responsibility | Status |
 |---|---|---|
 | [meta-universe](https://github.com/ver-cy/meta-universe) | **The standard.** MUC, MMAS, MUFP; constitution, architecture, federation, core concepts, guides; the [live register of meta-models](registry/) | Live |
-| [world-models](https://github.com/ver-cy/world-models) | **The example library.** 145-model catalogue of the world of people and events on Earth, with 7 deep normative specifications | Live |
+| [world-models](https://github.com/ver-cy/world-models) | **The example catalogue.** 112 vendor-neutral meta-models of the world of people and events on Earth, each an MMAS card with its own bundles and layers | Live |
 | [fcd](https://github.com/ver-cy/fcd) | **Full Context Development.** The VC-FCD-001 standard: every change made with full model context, every learning written back | Live |
 | [processes](https://github.com/ver-cy/processes) | **The operating palette.** The processes that keep a Universe functioning as the digital reflection of reality: actualization, actuation, contribution, exchange, quality, context operations; execution variants, the mandatory minimum, bootstraps, and BPMN 2.0 diagrams | Live |
 
