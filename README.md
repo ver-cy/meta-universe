@@ -238,14 +238,12 @@ New to the project? The **[FAQ](00-foundation/FAQ.md)** answers the most common 
 
 This repository is the standard. Around it:
 
-| Repository or package | What it holds |
+| Repository | What it holds |
 |---|---|
 | [meta-universe](https://github.com/ver-cy/meta-universe) | The standard itself, plus the [live register of meta-models](06-ecosystem/registry/) (search, entries, registration flow) |
-| [packages/world-models](packages/world-models/) | The example library: 145 meta-models describing the world of people and events on Earth, 18 of them deepened into 7 normative specifications |
-| [packages/fcd](packages/fcd/) | Full Context Development (VC-FCD-001): every change made with full model context, every learning written back |
-| [packages/processes](packages/processes/) | The operating palette: 81 processes in 7 families that keep a Universe functioning as the digital reflection of reality, with BPMN 2.0 diagrams |
-
-The three packages are separate products awaiting their own repositories; each is self-contained and split-ready (see [packages/README](packages/README.md)).
+| [world-models](https://github.com/ver-cy/world-models) | The example library: 145 meta-models describing the world of people and events on Earth, 18 of them deepened into 7 normative specifications |
+| [fcd](https://github.com/ver-cy/fcd) | Full Context Development (VC-FCD-001): every change made with full model context, every learning written back |
+| [processes](https://github.com/ver-cy/processes) | The operating palette: 81 processes in 7 families that keep a Universe functioning as the digital reflection of reality, with BPMN 2.0 diagrams and worked bootstrap examples |
 
 The map of the family and the path of a model from publication to use in another Dimension: [Vercy-Repositories](06-ecosystem/Vercy-Repositories.md).
 
