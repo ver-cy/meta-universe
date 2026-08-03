@@ -262,7 +262,7 @@ The registry defined above is live as machine-readable data in [`registry/`](reg
 
 | Model | Publisher | Version | Kind | Source | Status |
 |-------|-----------|---------|------|--------|--------|
-| Vercy world-model library | Vercy project | 0.1.0 | Example library (the world of people and events on Earth: 145-model catalogue, 7 deep specifications) | [world-models](https://github.com/ver-cy/world-models) | Draft |
+| Vercy world-model library | Vercy project | 0.1.0 | Example library (the world of people and events on Earth: 145-model catalogue, 7 deep specifications) | [packages/world-models](../packages/world-models/) | Draft |
 | AISMM (AI-driven Software Meta-Model) | Orkestron.AI | 3.1 | Domain Meta-Model (software product) | [software-meta-model](https://github.com/orkestron-ai/software-meta-model) | Stable |
 | PLMM (Product Landscape Meta-Model) | Orkestron.AI | 0.1 | Enterprise Meta-Model (product landscape, federates AISMM) | [product-landscape-meta-model](https://github.com/orkestron-ai/product-landscape-meta-model) | Draft |
 | BKM (Base Knowledge Model) | Orkestron.AI | 0.4 | Foundation Meta-Model (professional knowledge as Semantic Packages) | private at time of writing | Draft |

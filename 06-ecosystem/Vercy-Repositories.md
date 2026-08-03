@@ -24,14 +24,14 @@ The design follows the standard's own rules: each repository has one semantic re
 
 # 2. The family
 
-| Repository | Responsibility | Status |
+| Repository or package | Responsibility | Status |
 |---|---|---|
 | [meta-universe](https://github.com/ver-cy/meta-universe) | **The standard.** MUC, MMAS, MUFP; constitution, architecture, federation, core concepts, guides; the [live register of meta-models](registry/) | Live |
-| [world-models](https://github.com/ver-cy/world-models) | **The example library.** 145-model catalogue of the world of people and events on Earth, with 7 deep normative specifications | Publishing |
-| [fcd](https://github.com/ver-cy/fcd) | **Full Context Development.** The VC-FCD-001 standard: every change made with full model context, every learning written back | Publishing |
-| processes | **The operating palette.** The processes that keep a Universe functioning as the digital reflection of reality: actualization, actuation, contribution, exchange, quality, context operations; execution variants, the mandatory minimum, bootstraps, and BPMN 2.0 diagrams | In preparation |
+| [packages/world-models](../packages/world-models/) | **The example library.** 145-model catalogue of the world of people and events on Earth, with 7 deep normative specifications | Live, awaiting its own repository |
+| [packages/fcd](../packages/fcd/) | **Full Context Development.** The VC-FCD-001 standard: every change made with full model context, every learning written back | Live, awaiting its own repository |
+| [packages/processes](../packages/processes/) | **The operating palette.** The processes that keep a Universe functioning as the digital reflection of reality: actualization, actuation, contribution, exchange, quality, context operations; execution variants, the mandatory minimum, bootstraps, and BPMN 2.0 diagrams | Live, awaiting its own repository |
 
-One dataset, one master: the standard is mastered in `meta-universe`, the register in `meta-universe/06-ecosystem/registry/`, each model in its own repository. Everything else that looks like a copy is a mirror or a rendered artifact (for example, the ver.cy site).
+One dataset, one master: the standard is mastered in this repository's specification tree, the register in `06-ecosystem/registry/`, and each package by its own directory under [`packages/`](../packages/README.md). Everything else that looks like a copy is a mirror or a rendered artifact (for example, the ver.cy site). The three packages are separate products, not parts of the standard: each is self-contained and prepared for `git subtree split` into `ver-cy/fcd`, `ver-cy/world-models` and `ver-cy/processes` once those repositories exist.
 
 ---
 
@@ -54,7 +54,7 @@ The iron rule applies at every step: information from any meta-model is readable
 
 A model is operated by more than one actor: its Owner, accountable Stewards, Contributors, Consumers, delegated AI Agents and Auditors. The standard side of that story lives in [Agent-Operations](../07-guides/Agent-Operations.md) (how any agent reads and changes a conformant model safely: bootstrap first, mastership always, derived copies disposable) and in [Consent-and-Disclosure](../03-federation/Consent-and-Disclosure.md) (what may leave a model and under whose permission).
 
-The operational side, the full process palette with roles, delegation tiers (human-in-the-loop, human-on-the-loop, autonomous-with-audit), execution variants and the mandatory minimum, is the responsibility of the `processes` repository.
+The operational side, the full process palette with roles, delegation tiers (human-in-the-loop, human-on-the-loop, autonomous-with-audit), execution variants and the mandatory minimum, is the responsibility of the [processes package](../packages/processes/): 81 processes in 7 families, with BPMN 2.0 diagrams and worked bootstrap examples.
 
 ---
 

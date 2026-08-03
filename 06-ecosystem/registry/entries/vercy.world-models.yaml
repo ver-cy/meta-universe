@@ -10,7 +10,8 @@ status: draft
 license: Apache-2.0
 access: public
 source:
-  repository: https://github.com/ver-cy/world-models
+  repository: https://github.com/ver-cy/meta-universe
+  path: packages/world-models
   ref: main
 conformance:
   muc: "2.0"
@@ -27,7 +28,7 @@ domains: [world, society, state, economy, security, property, health, democracy]
 primary_namespace: vercy.world
 dependencies: []
 imports: [gs1, ifc, fhir, iec-cim, dcat, w3c-org]
-docs: https://github.com/ver-cy/world-models#readme
+docs: https://github.com/ver-cy/meta-universe/tree/main/packages/world-models#readme
 registered: "2026-07-31"
 notes: >
   The Meta-Orchestrator State (MOS) is the reference Dimension consuming this

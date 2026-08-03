@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Defs_QSC-4" targetNamespace="https://ver.cy/processes">
+  <bpmn:process id="QSC-4" name="Validation run (V0-V5)" isExecutable="false">
+    <bpmn:startEvent id="Start_1" name="Genesis, change batch, or scheduled validation">
+      <bpmn:outgoing>Flow_1</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:task id="Step_1" name="1. Pin version, compute fingerprint (Agent T3)">
+      <bpmn:incoming>Flow_1</bpmn:incoming>
+      <bpmn:outgoing>Flow_2</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Step_2" name="2. Run V0 syntax validation (Agent T3)">
+      <bpmn:incoming>Flow_2</bpmn:incoming>
+      <bpmn:outgoing>Flow_3</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:exclusiveGateway id="Gw_1" name="V0 errors unresolved?">
+      <bpmn:incoming>Flow_3</bpmn:incoming>
+      <bpmn:outgoing>Flow_4</bpmn:outgoing>
+      <bpmn:outgoing>Flow_6</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:task id="Step_2b" name="2a. Publish partial report, notify Steward (Agent T3)">
+      <bpmn:incoming>Flow_4</bpmn:incoming>
+      <bpmn:outgoing>Flow_5</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:endEvent id="End_1" name="Validation stopped: V0 errors">
+      <bpmn:incoming>Flow_5</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:task id="Step_3" name="3. Run V1 structural validation (Agent T3)">
+      <bpmn:incoming>Flow_6</bpmn:incoming>
+      <bpmn:outgoing>Flow_7</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:exclusiveGateway id="Gw_2" name="V1 errors unresolved?">
+      <bpmn:incoming>Flow_7</bpmn:incoming>
+      <bpmn:outgoing>Flow_8</bpmn:outgoing>
+      <bpmn:outgoing>Flow_10</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:task id="Step_3b" name="3a. Publish partial report, notify Steward (Agent T3)">
+      <bpmn:incoming>Flow_8</bpmn:incoming>
+      <bpmn:outgoing>Flow_9</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:endEvent id="End_2" name="Validation stopped: V1 errors">
+      <bpmn:incoming>Flow_9</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:task id="Step_4" name="4. Run V2 semantic validation (Agent T3)">
+      <bpmn:incoming>Flow_10</bpmn:incoming>
+      <bpmn:outgoing>Flow_11</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:exclusiveGateway id="Gw_3" name="V2 errors unresolved?">
+      <bpmn:incoming>Flow_11</bpmn:incoming>
+      <bpmn:outgoing>Flow_12</bpmn:outgoing>
+      <bpmn:outgoing>Flow_14</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:task id="Step_4b" name="4a. Publish partial report, notify Steward (Agent T3)">
+      <bpmn:incoming>Flow_12</bpmn:incoming>
+      <bpmn:outgoing>Flow_13</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:endEvent id="End_3" name="Validation stopped: V2 errors">
+      <bpmn:incoming>Flow_13</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:task id="Step_5" name="5. Run V3 constitutional validation (Agent T3)">
+      <bpmn:incoming>Flow_14</bpmn:incoming>
+      <bpmn:outgoing>Flow_15</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:exclusiveGateway id="Gw_4" name="V3 errors unresolved?">
+      <bpmn:incoming>Flow_15</bpmn:incoming>
+      <bpmn:outgoing>Flow_16</bpmn:outgoing>
+      <bpmn:outgoing>Flow_18</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:task id="Step_5b" name="5a. Publish partial report, notify Steward (Agent T3)">
+      <bpmn:incoming>Flow_16</bpmn:incoming>
+      <bpmn:outgoing>Flow_17</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:endEvent id="End_4" name="Validation stopped: V3 errors">
+      <bpmn:incoming>Flow_17</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:exclusiveGateway id="Gw_5" name="Model federates or intends to?">
+      <bpmn:incoming>Flow_18</bpmn:incoming>
+      <bpmn:outgoing>Flow_19</bpmn:outgoing>
+      <bpmn:outgoing>Flow_20</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:task id="Step_6" name="6. Run V4 federation validation (Agent T3)">
+      <bpmn:incoming>Flow_19</bpmn:incoming>
+      <bpmn:outgoing>Flow_21</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:exclusiveGateway id="Gw_6" name="V4 errors unresolved?">
+      <bpmn:incoming>Flow_21</bpmn:incoming>
+      <bpmn:outgoing>Flow_22</bpmn:outgoing>
+      <bpmn:outgoing>Flow_24</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:task id="Step_6b" name="6a. Publish partial report, notify Steward (Agent T3)">
+      <bpmn:incoming>Flow_22</bpmn:incoming>
+      <bpmn:outgoing>Flow_23</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:endEvent id="End_5" name="Validation stopped: V4 errors">
+      <bpmn:incoming>Flow_23</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:exclusiveGateway id="Gw_7" name="Live runtime exists?">
+      <bpmn:incoming>Flow_20</bpmn:incoming>
+      <bpmn:incoming>Flow_24</bpmn:incoming>
+      <bpmn:outgoing>Flow_25</bpmn:outgoing>
+      <bpmn:outgoing>Flow_26</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:task id="Step_7" name="7. Run V5 instance conformance check (Agent T3)">
+      <bpmn:incoming>Flow_25</bpmn:incoming>
+      <bpmn:outgoing>Flow_27</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Step_8" name="8. Assemble, publish Validation Report (Agent T3)">
+      <bpmn:incoming>Flow_26</bpmn:incoming>
+      <bpmn:incoming>Flow_27</bpmn:incoming>
+      <bpmn:outgoing>Flow_28</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:exclusiveGateway id="Gw_8" name="Achieved level lower than before?">
+      <bpmn:incoming>Flow_28</bpmn:incoming>
+      <bpmn:outgoing>Flow_29</bpmn:outgoing>
+      <bpmn:outgoing>Flow_31</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:task id="Step_8b" name="9a. Record regression, notify Owner (Steward T1)">
+      <bpmn:incoming>Flow_29</bpmn:incoming>
+      <bpmn:outgoing>Flow_30</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:endEvent id="End_6" name="Published with regression recorded">
+      <bpmn:incoming>Flow_30</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:endEvent id="End_7" name="Validation Report published">
+      <bpmn:incoming>Flow_31</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_1" sourceRef="Start_1" targetRef="Step_1" />
+    <bpmn:sequenceFlow id="Flow_2" sourceRef="Step_1" targetRef="Step_2" />
+    <bpmn:sequenceFlow id="Flow_3" sourceRef="Step_2" targetRef="Gw_1" />
+    <bpmn:sequenceFlow id="Flow_4" sourceRef="Gw_1" targetRef="Step_2b" name="yes" />
+    <bpmn:sequenceFlow id="Flow_5" sourceRef="Step_2b" targetRef="End_1" />
+    <bpmn:sequenceFlow id="Flow_6" sourceRef="Gw_1" targetRef="Step_3" name="no" />
+    <bpmn:sequenceFlow id="Flow_7" sourceRef="Step_3" targetRef="Gw_2" />
+    <bpmn:sequenceFlow id="Flow_8" sourceRef="Gw_2" targetRef="Step_3b" name="yes" />
+    <bpmn:sequenceFlow id="Flow_9" sourceRef="Step_3b" targetRef="End_2" />
+    <bpmn:sequenceFlow id="Flow_10" sourceRef="Gw_2" targetRef="Step_4" name="no" />
+    <bpmn:sequenceFlow id="Flow_11" sourceRef="Step_4" targetRef="Gw_3" />
+    <bpmn:sequenceFlow id="Flow_12" sourceRef="Gw_3" targetRef="Step_4b" name="yes" />
+    <bpmn:sequenceFlow id="Flow_13" sourceRef="Step_4b" targetRef="End_3" />
+    <bpmn:sequenceFlow id="Flow_14" sourceRef="Gw_3" targetRef="Step_5" name="no" />
+    <bpmn:sequenceFlow id="Flow_15" sourceRef="Step_5" targetRef="Gw_4" />
+    <bpmn:sequenceFlow id="Flow_16" sourceRef="Gw_4" targetRef="Step_5b" name="yes" />
+    <bpmn:sequenceFlow id="Flow_17" sourceRef="Step_5b" targetRef="End_4" />
+    <bpmn:sequenceFlow id="Flow_18" sourceRef="Gw_4" targetRef="Gw_5" name="no" />
+    <bpmn:sequenceFlow id="Flow_19" sourceRef="Gw_5" targetRef="Step_6" name="yes" />
+    <bpmn:sequenceFlow id="Flow_20" sourceRef="Gw_5" targetRef="Gw_7" name="no" />
+    <bpmn:sequenceFlow id="Flow_21" sourceRef="Step_6" targetRef="Gw_6" />
+    <bpmn:sequenceFlow id="Flow_22" sourceRef="Gw_6" targetRef="Step_6b" name="yes" />
+    <bpmn:sequenceFlow id="Flow_23" sourceRef="Step_6b" targetRef="End_5" />
+    <bpmn:sequenceFlow id="Flow_24" sourceRef="Gw_6" targetRef="Gw_7" name="no" />
+    <bpmn:sequenceFlow id="Flow_25" sourceRef="Gw_7" targetRef="Step_7" name="yes" />
+    <bpmn:sequenceFlow id="Flow_26" sourceRef="Gw_7" targetRef="Step_8" name="no" />
+    <bpmn:sequenceFlow id="Flow_27" sourceRef="Step_7" targetRef="Step_8" />
+    <bpmn:sequenceFlow id="Flow_28" sourceRef="Step_8" targetRef="Gw_8" />
+    <bpmn:sequenceFlow id="Flow_29" sourceRef="Gw_8" targetRef="Step_8b" name="yes" />
+    <bpmn:sequenceFlow id="Flow_30" sourceRef="Step_8b" targetRef="End_6" />
+    <bpmn:sequenceFlow id="Flow_31" sourceRef="Gw_8" targetRef="End_7" name="no" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="Diagram_QSC-4">
+    <bpmndi:BPMNPlane id="Plane_QSC-4" bpmnElement="QSC-4">
+      <bpmndi:BPMNShape id="Shape_Start_1" bpmnElement="Start_1">
+        <dc:Bounds x="160" y="192" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Step_1" bpmnElement="Step_1">
+        <dc:Bounds x="370" y="170" width="160" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Step_2" bpmnElement="Step_2">
+        <dc:Bounds x="580" y="170" width="160" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Gw_1" bpmnElement="Gw_1">
+        <dc:Bounds x="790" y="185" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Step_2b" bpmnElement="Step_2b">
+        <dc:Bounds x="895" y="330" width="160" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_End_1" bpmnElement="End_1">
+        <dc:Bounds x="1085" y="352" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Step_3" bpmnElement="Step_3">
+        <dc:Bounds x="1000" y="170" width="160" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Gw_2" bpmnElement="Gw_2">
+        <dc:Bounds x="1210" y="185" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Step_3b" bpmnElement="Step_3b">
+        <dc:Bounds x="1315" y="330" width="160" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_End_2" bpmnElement="End_2">
+        <dc:Bounds x="1505" y="352" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Step_4" bpmnElement="Step_4">
+        <dc:Bounds x="1420" y="170" width="160" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Gw_3" bpmnElement="Gw_3">
+        <dc:Bounds x="1630" y="185" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Step_4b" bpmnElement="Step_4b">
+        <dc:Bounds x="1735" y="330" width="160" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_End_3" bpmnElement="End_3">
+        <dc:Bounds x="1925" y="352" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Step_5" bpmnElement="Step_5">
+        <dc:Bounds x="1840" y="170" width="160" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Gw_4" bpmnElement="Gw_4">
+        <dc:Bounds x="2050" y="185" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Step_5b" bpmnElement="Step_5b">
+        <dc:Bounds x="2155" y="330" width="160" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_End_4" bpmnElement="End_4">
+        <dc:Bounds x="2345" y="352" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Gw_5" bpmnElement="Gw_5">
+        <dc:Bounds x="2260" y="185" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Step_6" bpmnElement="Step_6">
+        <dc:Bounds x="2470" y="170" width="160" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Gw_6" bpmnElement="Gw_6">
+        <dc:Bounds x="2680" y="185" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Step_6b" bpmnElement="Step_6b">
+        <dc:Bounds x="2785" y="330" width="160" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_End_5" bpmnElement="End_5">
+        <dc:Bounds x="2975" y="352" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Gw_7" bpmnElement="Gw_7">
+        <dc:Bounds x="2890" y="185" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Step_7" bpmnElement="Step_7">
+        <dc:Bounds x="3100" y="170" width="160" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Step_8" bpmnElement="Step_8">
+        <dc:Bounds x="3310" y="170" width="160" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Gw_8" bpmnElement="Gw_8">
+        <dc:Bounds x="3520" y="185" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Step_8b" bpmnElement="Step_8b">
+        <dc:Bounds x="3625" y="330" width="160" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_End_6" bpmnElement="End_6">
+        <dc:Bounds x="3815" y="352" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_End_7" bpmnElement="End_7">
+        <dc:Bounds x="3730" y="192" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Edge_Flow_1" bpmnElement="Flow_1">
+        <di:waypoint x="196" y="210" />
+        <di:waypoint x="370" y="210" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Flow_2" bpmnElement="Flow_2">
+        <di:waypoint x="530" y="210" />
+        <di:waypoint x="580" y="210" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Flow_3" bpmnElement="Flow_3">
+        <di:waypoint x="740" y="210" />
+        <di:waypoint x="790" y="210" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Flow_4" bpmnElement="Flow_4">
+        <di:waypoint x="840" y="210" />
+        <di:waypoint x="895" y="370" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Flow_5" bpmnElement="Flow_5">
+        <di:waypoint x="1055" y="370" />
+        <di:waypoint x="1085" y="370" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Flow_6" bpmnElement="Flow_6">
+        <di:waypoint x="840" y="210" />
+        <di:waypoint x="1000" y="210" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Flow_7" bpmnElement="Flow_7">
+        <di:waypoint x="1160" y="210" />
+        <di:waypoint x="1210" y="210" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Flow_8" bpmnElement="Flow_8">
+        <di:waypoint x="1260" y="210" />
+        <di:waypoint x="1315" y="370" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Flow_9" bpmnElement="Flow_9">
+        <di:waypoint x="1475" y="370" />
+        <di:waypoint x="1505" y="370" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Flow_10" bpmnElement="Flow_10">
+        <di:waypoint x="1260" y="210" />
+        <di:waypoint x="1420" y="210" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Flow_11" bpmnElement="Flow_11">
+        <di:waypoint x="1580" y="210" />
+        <di:waypoint x="1630" y="210" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Flow_12" bpmnElement="Flow_12">
+        <di:waypoint x="1680" y="210" />
+        <di:waypoint x="1735" y="370" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Flow_13" bpmnElement="Flow_13">
+        <di:waypoint x="1895" y="370" />
+        <di:waypoint x="1925" y="370" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Flow_14" bpmnElement="Flow_14">
+        <di:waypoint x="1680" y="210" />
+        <di:waypoint x="1840" y="210" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Flow_15" bpmnElement="Flow_15">
+        <di:waypoint x="2000" y="210" />
+        <di:waypoint x="2050" y="210" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Flow_16" bpmnElement="Flow_16">
+        <di:waypoint x="2100" y="210" />
+        <di:waypoint x="2155" y="370" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Flow_17" bpmnElement="Flow_17">
+        <di:waypoint x="2315" y="370" />
+        <di:waypoint x="2345" y="370" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Flow_18" bpmnElement="Flow_18">
+        <di:waypoint x="2100" y="210" />
+        <di:waypoint x="2260" y="210" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Flow_19" bpmnElement="Flow_19">
+        <di:waypoint x="2310" y="210" />
+        <di:waypoint x="2470" y="210" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Flow_20" bpmnElement="Flow_20">
+        <di:waypoint x="2310" y="210" />
+        <di:waypoint x="2890" y="210" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Flow_21" bpmnElement="Flow_21">
+        <di:waypoint x="2630" y="210" />
+        <di:waypoint x="2680" y="210" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Flow_22" bpmnElement="Flow_22">
+        <di:waypoint x="2730" y="210" />
+        <di:waypoint x="2785" y="370" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Flow_23" bpmnElement="Flow_23">
+        <di:waypoint x="2945" y="370" />
+        <di:waypoint x="2975" y="370" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Flow_24" bpmnElement="Flow_24">
+        <di:waypoint x="2730" y="210" />
+        <di:waypoint x="2890" y="210" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Flow_25" bpmnElement="Flow_25">
+        <di:waypoint x="2940" y="210" />
+        <di:waypoint x="3100" y="210" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Flow_26" bpmnElement="Flow_26">
+        <di:waypoint x="2940" y="210" />
+        <di:waypoint x="3310" y="210" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Flow_27" bpmnElement="Flow_27">
+        <di:waypoint x="3260" y="210" />
+        <di:waypoint x="3310" y="210" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Flow_28" bpmnElement="Flow_28">
+        <di:waypoint x="3470" y="210" />
+        <di:waypoint x="3520" y="210" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Flow_29" bpmnElement="Flow_29">
+        <di:waypoint x="3570" y="210" />
+        <di:waypoint x="3625" y="370" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Flow_30" bpmnElement="Flow_30">
+        <di:waypoint x="3785" y="370" />
+        <di:waypoint x="3815" y="370" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Flow_31" bpmnElement="Flow_31">
+        <di:waypoint x="3570" y="210" />
+        <di:waypoint x="3730" y="210" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Defs_ACT-3" targetNamespace="https://ver.cy/processes">
+<bpmn:process id="ACT-3" name="Effector registration and capability contracts" isExecutable="false">
+<bpmn:startEvent id="Start_1" name="New effector, change, failed command or recert due"/>
+<bpmn:task id="Step_1" name="1. Identify effector and reality domain (Steward)"/>
+<bpmn:task id="Step_2" name="2. Map target to Mastership Register datasets"/>
+<bpmn:exclusiveGateway id="Gw_1" name="Model-mastered, external-mastered or unmodeled?"/>
+<bpmn:task id="Step_8" name="Create register entry via MIR-1 first (Owner gate)"/>
+<bpmn:task id="Step_3" name="3. Draft capability contract (Agent T1)"/>
+<bpmn:task id="Step_4" name="4. Run least-privilege security check (Steward)"/>
+<bpmn:exclusiveGateway id="Gw_2" name="Beyond Steward scope or another Owner's reality?"/>
+<bpmn:task id="Step_9" name="Obtain Owner approval and grant (GOV-1, GOV-7)"/>
+<bpmn:task id="Step_5" name="5. Register effector; human accepts contract"/>
+<bpmn:task id="Step_6" name="6. Schedule health checks as QSC-15 jobs (Agent T3)"/>
+<bpmn:task id="Step_7" name="7. Recertify on cadence; retire via GOV-8 (Steward)"/>
+<bpmn:endEvent id="End_1" name="Effector active under capability contract"/>
+<bpmn:sequenceFlow id="Flow_1" sourceRef="Start_1" targetRef="Step_1"/>
+<bpmn:sequenceFlow id="Flow_2" sourceRef="Step_1" targetRef="Step_2"/>
+<bpmn:sequenceFlow id="Flow_3" sourceRef="Step_2" targetRef="Gw_1"/>
+<bpmn:sequenceFlow id="Flow_4" name="mastered (ACT-7 or ACT-8 route)" sourceRef="Gw_1" targetRef="Step_3"/>
+<bpmn:sequenceFlow id="Flow_5" name="unmodeled" sourceRef="Gw_1" targetRef="Step_8"/>
+<bpmn:sequenceFlow id="Flow_6" sourceRef="Step_8" targetRef="Step_3"/>
+<bpmn:sequenceFlow id="Flow_7" sourceRef="Step_3" targetRef="Step_4"/>
+<bpmn:sequenceFlow id="Flow_8" sourceRef="Step_4" targetRef="Gw_2"/>
+<bpmn:sequenceFlow id="Flow_9" name="yes" sourceRef="Gw_2" targetRef="Step_9"/>
+<bpmn:sequenceFlow id="Flow_10" name="no" sourceRef="Gw_2" targetRef="Step_5"/>
+<bpmn:sequenceFlow id="Flow_11" sourceRef="Step_9" targetRef="Step_5"/>
+<bpmn:sequenceFlow id="Flow_12" sourceRef="Step_5" targetRef="Step_6"/>
+<bpmn:sequenceFlow id="Flow_13" sourceRef="Step_6" targetRef="Step_7"/>
+<bpmn:sequenceFlow id="Flow_14" sourceRef="Step_7" targetRef="End_1"/>
+</bpmn:process>
+<bpmndi:BPMNDiagram id="Diagram_ACT-3">
+<bpmndi:BPMNPlane id="Plane_ACT-3" bpmnElement="ACT-3">
+<bpmndi:BPMNShape id="Shape_Start_1" bpmnElement="Start_1"><dc:Bounds x="160" y="192" width="36" height="36"/></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Shape_Step_1" bpmnElement="Step_1"><dc:Bounds x="370" y="170" width="160" height="80"/></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Shape_Step_2" bpmnElement="Step_2"><dc:Bounds x="580" y="170" width="160" height="80"/></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Shape_Gw_1" bpmnElement="Gw_1"><dc:Bounds x="790" y="185" width="50" height="50"/></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Shape_Step_8" bpmnElement="Step_8"><dc:Bounds x="895" y="330" width="160" height="80"/></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Shape_Step_3" bpmnElement="Step_3"><dc:Bounds x="1000" y="170" width="160" height="80"/></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Shape_Step_4" bpmnElement="Step_4"><dc:Bounds x="1210" y="170" width="160" height="80"/></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Shape_Gw_2" bpmnElement="Gw_2"><dc:Bounds x="1420" y="185" width="50" height="50"/></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Shape_Step_9" bpmnElement="Step_9"><dc:Bounds x="1525" y="330" width="160" height="80"/></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Shape_Step_5" bpmnElement="Step_5"><dc:Bounds x="1630" y="170" width="160" height="80"/></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Shape_Step_6" bpmnElement="Step_6"><dc:Bounds x="1840" y="170" width="160" height="80"/></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Shape_Step_7" bpmnElement="Step_7"><dc:Bounds x="2050" y="170" width="160" height="80"/></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Shape_End_1" bpmnElement="End_1"><dc:Bounds x="2260" y="192" width="36" height="36"/></bpmndi:BPMNShape>
+<bpmndi:BPMNEdge id="Edge_Flow_1" bpmnElement="Flow_1"><di:waypoint x="196" y="210"/><di:waypoint x="370" y="210"/></bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="Edge_Flow_2" bpmnElement="Flow_2"><di:waypoint x="530" y="210"/><di:waypoint x="580" y="210"/></bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="Edge_Flow_3" bpmnElement="Flow_3"><di:waypoint x="740" y="210"/><di:waypoint x="790" y="210"/></bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="Edge_Flow_4" bpmnElement="Flow_4"><di:waypoint x="840" y="210"/><di:waypoint x="1000" y="210"/></bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="Edge_Flow_5" bpmnElement="Flow_5"><di:waypoint x="840" y="210"/><di:waypoint x="895" y="370"/></bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="Edge_Flow_6" bpmnElement="Flow_6"><di:waypoint x="1055" y="370"/><di:waypoint x="1000" y="210"/></bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="Edge_Flow_7" bpmnElement="Flow_7"><di:waypoint x="1160" y="210"/><di:waypoint x="1210" y="210"/></bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="Edge_Flow_8" bpmnElement="Flow_8"><di:waypoint x="1370" y="210"/><di:waypoint x="1420" y="210"/></bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="Edge_Flow_9" bpmnElement="Flow_9"><di:waypoint x="1470" y="210"/><di:waypoint x="1525" y="370"/></bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="Edge_Flow_10" bpmnElement="Flow_10"><di:waypoint x="1470" y="210"/><di:waypoint x="1630" y="210"/></bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="Edge_Flow_11" bpmnElement="Flow_11"><di:waypoint x="1685" y="370"/><di:waypoint x="1630" y="210"/></bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="Edge_Flow_12" bpmnElement="Flow_12"><di:waypoint x="1790" y="210"/><di:waypoint x="1840" y="210"/></bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="Edge_Flow_13" bpmnElement="Flow_13"><di:waypoint x="2000" y="210"/><di:waypoint x="2050" y="210"/></bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="Edge_Flow_14" bpmnElement="Flow_14"><di:waypoint x="2210" y="210"/><di:waypoint x="2260" y="210"/></bpmndi:BPMNEdge>
+</bpmndi:BPMNPlane>
+</bpmndi:BPMNDiagram>
+</bpmn:definitions>

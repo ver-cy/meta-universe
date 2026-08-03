@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Defs_CON-4" targetNamespace="https://ver.cy/processes">
+  <bpmn:process id="CON-4" name="Review and approval" isExecutable="false">
+    <bpmn:startEvent id="Start_1" name="Contribution passes CON-3 gates" />
+    <bpmn:task id="Step_1" name="1. Classify impact and semantic change type (Agent T2)" />
+    <bpmn:task id="Step_2" name="2. Run diff-based lane classifier (GOV-2 config)" />
+    <bpmn:exclusiveGateway id="Gw_1" name="Auto-approval lane?" />
+    <bpmn:task id="Step_3" name="Auto-approve and merge with audit trail (Agent T3)" />
+    <bpmn:exclusiveGateway id="Gw_2" name="Touches security-critical dataset class?" />
+    <bpmn:task id="Step_4" name="3. Enforce T1 acceptance, second human reviewer" />
+    <bpmn:task id="Step_5" name="4. Assign reviewers per approval matrix (Agent T2)" />
+    <bpmn:exclusiveGateway id="Gw_3" name="Contributor is the sole required approver?" />
+    <bpmn:task id="Step_6" name="4. Add an independent reviewer (Steward)" />
+    <bpmn:task id="Step_7" name="5. Assess meaning, placement, consequences (Steward)" />
+    <bpmn:exclusiveGateway id="Gw_4" name="Approve, request changes, or reject?" />
+    <bpmn:endEvent id="End_2" name="Returned to the Contributor" />
+    <bpmn:endEvent id="End_3" name="Rejected with rationale" />
+    <bpmn:task id="Step_8" name="7. Record decision Event, hand to CON-6 (Agent T3)" />
+    <bpmn:endEvent id="End_1" name="Approved entry handed to CON-6" />
+    <bpmn:sequenceFlow id="Flow_1" sourceRef="Start_1" targetRef="Step_1" />
+    <bpmn:sequenceFlow id="Flow_2" sourceRef="Step_1" targetRef="Step_2" />
+    <bpmn:sequenceFlow id="Flow_3" sourceRef="Step_2" targetRef="Gw_1" />
+    <bpmn:sequenceFlow id="Flow_4" name="yes" sourceRef="Gw_1" targetRef="Step_3" />
+    <bpmn:sequenceFlow id="Flow_5" sourceRef="Step_3" targetRef="Step_8" />
+    <bpmn:sequenceFlow id="Flow_6" name="no" sourceRef="Gw_1" targetRef="Gw_2" />
+    <bpmn:sequenceFlow id="Flow_7" name="yes" sourceRef="Gw_2" targetRef="Step_4" />
+    <bpmn:sequenceFlow id="Flow_8" sourceRef="Step_4" targetRef="Step_5" />
+    <bpmn:sequenceFlow id="Flow_9" name="no" sourceRef="Gw_2" targetRef="Step_5" />
+    <bpmn:sequenceFlow id="Flow_10" sourceRef="Step_5" targetRef="Gw_3" />
+    <bpmn:sequenceFlow id="Flow_11" name="yes" sourceRef="Gw_3" targetRef="Step_6" />
+    <bpmn:sequenceFlow id="Flow_12" sourceRef="Step_6" targetRef="Step_7" />
+    <bpmn:sequenceFlow id="Flow_13" name="no" sourceRef="Gw_3" targetRef="Step_7" />
+    <bpmn:sequenceFlow id="Flow_14" sourceRef="Step_7" targetRef="Gw_4" />
+    <bpmn:sequenceFlow id="Flow_15" name="approve" sourceRef="Gw_4" targetRef="Step_8" />
+    <bpmn:sequenceFlow id="Flow_16" name="request changes" sourceRef="Gw_4" targetRef="End_2" />
+    <bpmn:sequenceFlow id="Flow_17" name="reject" sourceRef="Gw_4" targetRef="End_3" />
+    <bpmn:sequenceFlow id="Flow_18" sourceRef="Step_8" targetRef="End_1" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="Diagram_CON-4">
+    <bpmndi:BPMNPlane id="Plane_CON-4" bpmnElement="CON-4">
+      <bpmndi:BPMNShape id="Start_1_di" bpmnElement="Start_1">
+        <dc:Bounds x="160" y="192" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Step_1_di" bpmnElement="Step_1">
+        <dc:Bounds x="370" y="148" width="160" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Step_2_di" bpmnElement="Step_2">
+        <dc:Bounds x="580" y="148" width="160" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gw_1_di" bpmnElement="Gw_1">
+        <dc:Bounds x="790" y="185" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Step_3_di" bpmnElement="Step_3">
+        <dc:Bounds x="895" y="330" width="160" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gw_2_di" bpmnElement="Gw_2">
+        <dc:Bounds x="1000" y="185" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Step_4_di" bpmnElement="Step_4">
+        <dc:Bounds x="1105" y="460" width="160" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Step_5_di" bpmnElement="Step_5">
+        <dc:Bounds x="1210" y="148" width="160" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gw_3_di" bpmnElement="Gw_3">
+        <dc:Bounds x="1420" y="185" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Step_6_di" bpmnElement="Step_6">
+        <dc:Bounds x="1525" y="330" width="160" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Step_7_di" bpmnElement="Step_7">
+        <dc:Bounds x="1630" y="148" width="160" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gw_4_di" bpmnElement="Gw_4">
+        <dc:Bounds x="1840" y="185" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="End_2_di" bpmnElement="End_2">
+        <dc:Bounds x="1945" y="352" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="End_3_di" bpmnElement="End_3">
+        <dc:Bounds x="1945" y="452" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Step_8_di" bpmnElement="Step_8">
+        <dc:Bounds x="2050" y="148" width="160" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="End_1_di" bpmnElement="End_1">
+        <dc:Bounds x="2260" y="192" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_1_di" bpmnElement="Flow_1">
+        <di:waypoint x="196" y="210" />
+        <di:waypoint x="370" y="188" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_2_di" bpmnElement="Flow_2">
+        <di:waypoint x="530" y="188" />
+        <di:waypoint x="580" y="188" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_3_di" bpmnElement="Flow_3">
+        <di:waypoint x="740" y="188" />
+        <di:waypoint x="790" y="210" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_4_di" bpmnElement="Flow_4">
+        <di:waypoint x="840" y="210" />
+        <di:waypoint x="895" y="370" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_5_di" bpmnElement="Flow_5">
+        <di:waypoint x="1055" y="370" />
+        <di:waypoint x="2050" y="188" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_6_di" bpmnElement="Flow_6">
+        <di:waypoint x="840" y="210" />
+        <di:waypoint x="1000" y="210" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_7_di" bpmnElement="Flow_7">
+        <di:waypoint x="1050" y="210" />
+        <di:waypoint x="1105" y="500" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_8_di" bpmnElement="Flow_8">
+        <di:waypoint x="1185" y="500" />
+        <di:waypoint x="1290" y="188" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_9_di" bpmnElement="Flow_9">
+        <di:waypoint x="1050" y="210" />
+        <di:waypoint x="1210" y="188" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_10_di" bpmnElement="Flow_10">
+        <di:waypoint x="1370" y="188" />
+        <di:waypoint x="1420" y="210" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_11_di" bpmnElement="Flow_11">
+        <di:waypoint x="1470" y="210" />
+        <di:waypoint x="1525" y="370" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_12_di" bpmnElement="Flow_12">
+        <di:waypoint x="1605" y="370" />
+        <di:waypoint x="1710" y="188" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_13_di" bpmnElement="Flow_13">
+        <di:waypoint x="1470" y="210" />
+        <di:waypoint x="1630" y="188" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_14_di" bpmnElement="Flow_14">
+        <di:waypoint x="1790" y="188" />
+        <di:waypoint x="1840" y="210" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_15_di" bpmnElement="Flow_15">
+        <di:waypoint x="1890" y="210" />
+        <di:waypoint x="2050" y="188" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_16_di" bpmnElement="Flow_16">
+        <di:waypoint x="1890" y="210" />
+        <di:waypoint x="1945" y="370" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_17_di" bpmnElement="Flow_17">
+        <di:waypoint x="1890" y="210" />
+        <di:waypoint x="1945" y="470" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_18_di" bpmnElement="Flow_18">
+        <di:waypoint x="2210" y="188" />
+        <di:waypoint x="2260" y="210" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

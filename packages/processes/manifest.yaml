@@ -1,0 +1,66 @@
+# ARCH-017 repository manifest (Model-Traversal-and-Layout)
+model:
+  id: vercy.processes
+  name: Vercy operating-process palette
+  version: 0.1.0
+  status: working-draft
+  license: Apache-2.0
+  steward: Vercy project
+
+bundles:
+  - id: common
+    meaning: the operating law every family cites (roles, tiers, iron controls, profiles)
+    order:
+      - README.md
+      - 00-common/Common-Operating-Law.md
+  - id: families
+    meaning: the seven process families, dependency-light reading order
+    order:
+      - 01-families/mirror-and-actualization.md
+      - 01-families/actuation-and-reality-feedback.md
+      - 01-families/contribution-and-entry-control.md
+      - 01-families/exchange-and-federation.md
+      - 01-families/quality-consistency-security.md
+      - 01-families/context-execution-collaboration.md
+      - 01-families/governance-access-operations.md
+  - id: index-and-examples
+    meaning: the machine index and worked bootstrap examples
+    order:
+      - processes.csv
+      - 02-bootstraps/solo-dimension.md
+      - 02-bootstraps/enterprise-landscape.md
+      - 02-bootstraps/state-dimension.md
+
+# Centralized classification (first match wins).
+kind_rules:
+  - pattern: "BOOTSTRAP.md"
+    kind: bootstrap
+    origin: authored
+  - pattern: "manifest.yaml"
+    kind: manifest
+    origin: authored
+  - pattern: "sources.yaml"
+    kind: manifest
+    origin: authored
+  - pattern: "README.md"
+    kind: doc
+    origin: authored
+  - pattern: "00-common/*.md"
+    kind: doc
+    origin: authored
+  - pattern: "01-families/*.md"
+    kind: doc
+    origin: authored
+  - pattern: "02-bootstraps/*.md"
+    kind: example
+    origin: authored
+  - pattern: "processes.csv"
+    kind: doc
+    origin: authored
+  - pattern: "bpmn/**/*.bpmn"
+    kind: diagram
+    origin: generated
+
+exclude:
+  - LICENSE
+  - .git/**
