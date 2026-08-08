@@ -1,27 +1,33 @@
 # Registered Meta-Model entry (validates against ../entry.schema.json)
 id: orkestron.aismm
 name: AISMM (AI-driven Software Meta-Model)
-publisher: Orkestron.AI
-owner: Orkestron.AI
-version: "3.1"
+publisher: Vercy project
+owner: Vercy project
+steward: ver-cy
+version: "3.2.0"
 kind: domain
 status: stable
 license: Apache-2.0
 access: public
 source:
-  repository: https://github.com/orkestron-ai/software-meta-model
-  ref: main
+  repository: https://github.com/ver-cy/software-meta-model
+  ref: v3.2.0
 conformance:
   muc: "2.0"
-  mmas: "2.0"
+  mmas: "2.1"
+  arch017: true
+  arch018: true
+  arch019: true
   fcd: measured
 purpose: >
-  The authoritative semantic description of a software product: 10 bundles and
-  56 layers from product core to knowledge traceability, designed so humans and
-  AI agents share one product context.
+  The authoritative semantic description of a software product: 13 bundles and
+  86 layers, with portable DatasetBindings and deterministic traversal across
+  Git, filesystems, databases, object stores, HTTP and MCP.
 domains: [software, product-management, development]
 primary_namespace: orkestron.aismm
 dependencies: []
-docs: https://github.com/orkestron-ai/software-meta-model#readme
+docs: https://github.com/ver-cy/software-meta-model#readme
 registered: "2026-07-31"
-notes: The origin and reference implementation of Full Context Development (VC-FCD-001).
+notes: >-
+  The origin and reference implementation of Full Context Development
+  (VC-FCD-001). Migrated from orkestron-ai with complete history and attribution.

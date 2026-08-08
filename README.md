@@ -196,7 +196,7 @@ Meta-Universe is designed as a **family of repositories**:
 |------------|---------|
 | **Meta-Universe** (this repo) | The ISO-like open standard: MUC, MMAS, MUFP, Core Concepts |
 | **meta-universe-reference-models** *(planned)* | Full reference meta-models (Employee, Organization, Product, AI Agent, …) |
-| [software-meta-model](https://github.com/orkestron-ai/software-meta-model) | A domain meta-model built on these standards |
+| [software-meta-model](https://github.com/ver-cy/software-meta-model) | AISMM 3.2, a domain meta-model and MMAS 2.1 portable package |
 | [product-landscape-meta-model](https://github.com/orkestron-ai/product-landscape-meta-model) | The federation layer above AISMM: a whole product landscape as one model |
 | [meta-orchestrator-state](https://github.com/orkestron-ai/meta-orchestrator-state) | A polity modelled as one Dimension (Axiacracy / MOS): the largest known application |
 | software-agents-contracts | Contract → Protocol → Deliverable specification for AI agents |

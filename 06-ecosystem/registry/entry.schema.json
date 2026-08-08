@@ -50,6 +50,7 @@
         "profile": { "type": "string", "description": "Claimed conformance profile (e.g. Meta-Universe Core)." },
         "arch017": { "type": "boolean", "description": "Carries the ARCH-017 traversal contract (BOOTSTRAP.md + manifest)." },
         "arch018": { "type": "boolean", "description": "Carries the ARCH-018 mastership register (sources.yaml)." },
+        "arch019": { "type": "boolean", "description": "Carries the ARCH-019 DatasetBinding contract for structure, representation, carrier, access, traversal and coverage." },
         "fcd": { "type": "string", "enum": ["core", "traceable", "measured"], "description": "Claimed FCD conformance level (VC-FCD-001)." }
       }
     },

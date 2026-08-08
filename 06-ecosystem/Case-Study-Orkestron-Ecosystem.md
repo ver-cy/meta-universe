@@ -50,7 +50,7 @@ Four specifications form the semantic backbone. Each one occupies a distinct lev
 
 ## 3.1 AISMM: one product as a full-context model
 
-**AISMM (AI-driven Software Meta-Model)**, published at [orkestron-ai/software-meta-model](https://github.com/orkestron-ai/software-meta-model) (v3.1, Apache-2.0), models a **single software product** as a complete system: why it exists, what value it creates, how it is designed, specified, implemented, operated, controlled and changed. Models are Git-native, human-readable and machine-readable, with UUID-stable identities and a registry file per model.
+**AISMM (AI-driven Software Meta-Model)**, now published at [ver-cy/software-meta-model](https://github.com/ver-cy/software-meta-model) (v3.2.0, Apache-2.0; complete Orkestron history preserved), models a **single software product** as a complete system: why it exists, what value it creates, how it is designed, specified, implemented, operated, controlled and changed. Models are human-readable and machine-readable, with UUID-stable identities, a registry file and portable bindings for Git, filesystems, databases, object stores, HTTP and MCP.
 
 Meta-Universe reading:
 
@@ -119,7 +119,7 @@ This is MUFP's core promise in miniature: *interoperability without absorption*.
 
 # 6. Composition and external standards in practice
 
-AISMM v3.1 includes an **external-binding layer**: a product model does not restate public standards, it binds to them. In ecosystem practice, models bind to identifiers and vocabularies such as ISO 3166, LEI, ESCO, schema.org types and W3C ORG.
+AISMM v3.2 includes an **external-binding layer** and the MMAS 2.1 portable data-surface contract: a product model does not restate public standards or confuse its semantics with one storage carrier. In ecosystem practice, models bind to identifiers and vocabularies such as ISO 3166, LEI, ESCO, schema.org types and W3C ORG.
 
 Working through real bindings surfaced the questions this standard now answers normatively:
 
@@ -140,8 +140,8 @@ Working through real bindings surfaced the questions this standard now answers n
 
 # 8. Status and references
 
-- Ecosystem steward: Orkestron.AI (also the steward of this specification's reference implementation).
-- Public repositories: [software-meta-model](https://github.com/orkestron-ai/software-meta-model), [product-landscape-meta-model](https://github.com/orkestron-ai/product-landscape-meta-model).
+- Ecosystem origin: Orkestron.AI. AISMM stewardship moved to the Vercy project with its complete Git history and attribution preserved.
+- Public repositories: [software-meta-model](https://github.com/ver-cy/software-meta-model), [product-landscape-meta-model](https://github.com/orkestron-ai/product-landscape-meta-model).
 - The standard itself is published vendor-neutrally at [ver.cy](https://ver.cy) with sources at [ver-cy/meta-universe](https://github.com/ver-cy/meta-universe); Orkestron appears in this document strictly as one known implementation.
 
 Maturity, in the vocabulary of [Known-Implementations](Known-Implementations.md) §7: **Production** (surfaces and realm federation), **Reference Implementation** (AISMM), **Experimental** (PLMM, BKM, contracts).
