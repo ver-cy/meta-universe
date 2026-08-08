@@ -166,7 +166,55 @@ A Meta-Model describing one bounded semantic domain.
 
 ## Semantic Package
 
-A reusable collection of related semantic artifacts.
+A reusable, self-describing collection of related semantic artifacts. Its logical content is independent of the carrier used to distribute it.
+
+---
+
+## Dataset
+
+A coherent body of data governed as one mastership unit, with exactly one System of Record.
+
+---
+
+## Logical Structure
+
+The technology-independent shape, identity, ordering and partition rules of a Dataset.
+
+---
+
+## Representation
+
+A declared encoding or rendering of logical structure, identified by media type and optional profile, encoding, parser and canonicalization policy. A Representation is not a semantic Projection.
+
+---
+
+## Carrier
+
+A kind of system that holds durable bytes or records, such as a package tree, Git repository, database, object store or MCP server.
+
+---
+
+## Locator
+
+A typed physical address within a Carrier. A Locator is never a semantic identity.
+
+---
+
+## Access Binding
+
+A declaration of the protocol, capabilities and credential reference by which a Carrier is accessed.
+
+---
+
+## Traversal Plan
+
+A deterministic declaration for enumerating or querying a Dataset at one snapshot, including scope, ordering, pagination, parser selection and coverage policy.
+
+---
+
+## Coverage Proof
+
+A machine-verifiable inventory showing that every addressable unit in a Traversal Plan's declared scope was included, excluded, skipped or failed for a stated reason.
 
 ---
 

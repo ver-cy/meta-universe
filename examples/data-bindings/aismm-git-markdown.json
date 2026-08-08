@@ -1,0 +1,49 @@
+{
+  "id": "binding.aismm.git",
+  "dataset": { "id": "aismm.semantic-model", "mastershipRef": "sources.yaml#aismm" },
+  "structure": { "kind": "tree", "ordering": "declared", "identityKeys": ["record.id"], "rootType": "MMAS composition hierarchy" },
+  "representations": [
+    {
+      "id": "rep.aismm-markdown",
+      "mediaType": "text/markdown",
+      "profile": "https://ver.cy/profiles/aismm/3.2/markdown-block",
+      "role": "semantic-primary",
+      "encoding": "utf-8",
+      "documentModel": "aismm-markdown-blocks",
+      "parserRef": "aismm.block-parser.v3",
+      "markdown": {
+        "dialect": "gfm",
+        "frontMatter": ["yaml"],
+        "selectors": [{ "kind": "block-marker", "value": "AISMM-BLOCK", "multiple": true }],
+        "allowRawHtml": false,
+        "orphanNarrative": "evidence",
+        "linkResolution": "binding-base"
+      }
+    }
+  ],
+  "carrier": {
+    "kind": "git",
+    "locator": { "scheme": "git", "value": "https://github.com/ver-cy/software-meta-model.git", "ref": "refs/tags/v3.2.0" }
+  },
+  "access": [{ "id": "access.git-read", "protocol": "git", "operations": ["list", "read"], "operationClass": "read" }],
+  "traversal": [
+    {
+      "id": "walk.aismm",
+      "algorithm": "git-tree-walk",
+      "roots": ["b0-context", "b1-product", "b2-architecture", "b3-interfaces", "b4-data", "b5-security", "b6-delivery", "b7-runtime", "b8-quality", "b9-ai", "b10-governance", "b11-evolution", "b12-domain"],
+      "include": ["**/*.md", "**/*.json", "**/*.yaml", "**/*.yml"],
+      "exclude": ["artifacts/**"],
+      "ignoreFiles": [".gitignore"],
+      "hidden": "declared-only",
+      "caseSensitive": true,
+      "symlinks": "error",
+      "submodules": "record",
+      "gitLfs": "pointer",
+      "snapshot": { "scheme": "git-commit", "value": "0123456789abcdef0123456789abcdef01234567" },
+      "order": ["manifest-declared", "path-bytewise"],
+      "parserRules": [{ "mediaType": "text/markdown", "pathPattern": "**/*.md", "parserRef": "aismm.block-parser.v3" }],
+      "coverage": { "mode": "semantic-units", "proofRequired": true }
+    }
+  ],
+  "package": { "mode": "embed", "packageFingerprintPolicy": "sha256-normalized-manifest-and-content", "semanticFingerprintRef": "manifest.yaml#semanticFingerprint", "coverageProofRef": "artifacts/coverage-proof.json" }
+}

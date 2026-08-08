@@ -115,6 +115,7 @@ See the full [Manifesto](00-foundation/Vision.md#the-meta-universe-manifesto) an
 |----------|---------|--------|
 | **MUC** — [Meta-Universe Constitution](01-constitution/Meta-Universe-Constitution.md) | The fundamental laws and invariants (21 articles, 6 chapters) | 🟧 Working Draft |
 | **MMAS** — [Meta-Model Architecture Standard](02-architecture/MMAS-Core.md) | How to build, version, validate and package a meta-model | 🟧 Working Draft |
+| **MMAS Data Portability** — [Structure, Representation, Carrier & Traversal](02-architecture/Data-Portability-and-Access.md) | How one dataset moves across files, Git, databases, HTTP and MCP without losing identity or coverage | 🟧 Working Draft 2.1 |
 | **MUFP** — [Meta-Universe Federation Protocol](03-federation/MUFP.md) | How sovereign universes discover, trust and exchange knowledge | 🟧 Working Draft |
 | **Core Concepts** — [04-core-concepts](04-core-concepts/) | The shared semantic vocabulary (Object, Relationship, Event, Contract, Projection, …) | 🟧 Working Draft |
 
@@ -180,7 +181,7 @@ External standards are imported as versioned **[Semantic Packages](02-architectu
 | Version | Theme |
 |---------|-------|
 | **v1.0 / v1.1** | First conceptual model (Universe → Dimension → Galaxy → Object → Projection) |
-| **v2.0 (current)** | Full standards family: MUC + MMAS + MUFP + Core Concepts + Reference Architecture + Ecosystem + Guides |
+| **v2.1 (current)** | Portable data bindings: logical structure × representation × carrier × access × deterministic traversal, with package-tree compatibility |
 | **Future** | Candidate standards — SVF, MMQS, SMS, MUDL, Semantic Package Registry; reference meta-models; tooling & SDKs |
 
 See the detailed [Roadmap](06-ecosystem/Roadmap.md) and the consolidated *Candidate Future Standards*.

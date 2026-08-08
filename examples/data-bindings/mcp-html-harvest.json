@@ -1,0 +1,45 @@
+{
+  "id": "binding.docs.mcp-html",
+  "dataset": { "id": "product-docs", "mastershipRef": "sources.yaml#product-docs", "description": "Product documentation harvested through MCP" },
+  "structure": { "kind": "document", "identityKeys": ["canonicalUrl"], "ordering": "declared" },
+  "representations": [
+    {
+      "id": "rep.docs-html",
+      "mediaType": "text/html",
+      "profile": "https://ver.cy/profiles/html/article-extract/1",
+      "role": "evidence",
+      "encoding": "utf-8",
+      "extractorRef": "html.article-extractor.v1",
+      "html": {
+        "documentKind": "document",
+        "selectors": [{ "kind": "css", "value": "main article", "multiple": false }],
+        "structuredData": ["json-ld", "microdata"],
+        "scripts": "reject",
+        "externalResources": "declared-only",
+        "allowedTargets": ["https://docs.example.org/"],
+        "baseUri": "https://docs.example.org/"
+      }
+    }
+  ],
+  "carrier": {
+    "kind": "mcp",
+    "locator": { "scheme": "mcp", "value": "mcp://docs-server/resources", "resource": "docs://product/{path}" }
+  },
+  "access": [{ "id": "access.docs-mcp", "protocol": "mcp", "operations": ["list", "read"], "operationClass": "read", "credentialRef": "session://docs-reader" }],
+  "traversal": [
+    {
+      "id": "walk.docs-mcp",
+      "algorithm": "mcp-resource-list",
+      "roots": ["docs://product/"],
+      "include": ["docs://product/**"],
+      "exclude": ["docs://product/internal/**"],
+      "order": ["resource-uri-bytewise"],
+      "pagination": { "strategy": "cursor", "pageSize": 200, "cursorField": "nextCursor" },
+      "snapshot": { "scheme": "mcp-revision", "value": "docs-rev-1842" },
+      "mcp": { "mode": "resource", "resourceUriTemplate": "docs://product/{path}", "cursorField": "cursor" },
+      "parserRules": [{ "mediaType": "text/html", "parserRef": "html5.parser", "extractorRef": "html.article-extractor.v1" }],
+      "coverage": { "mode": "declared-scope", "proofRequired": true }
+    }
+  ],
+  "package": { "mode": "hybrid", "packageFingerprintPolicy": "sha256-normalized-evidence-manifest", "coverageProofRef": "artifacts/docs-coverage.json" }
+}

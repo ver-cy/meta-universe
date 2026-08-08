@@ -14,6 +14,12 @@ validatable face of the abstract model defined in
 | `contract.schema.json` | A Semantic Contract |
 | `projection.schema.json` | A context-specific Projection |
 | `manifest.schema.json` | The meta-model package entry point (Composition Hierarchy) |
+| `dataset-binding.schema.json` | MMAS 2.1 portable DatasetBinding: logical structure, representation, carrier, access and traversal |
+| `coverage-proof.schema.json` | Deterministic traversal inventory and completeness proof |
+
+The two MMAS 2.1 binding schemas are packaging metadata and are deliberately
+outside the MUIF semantic fingerprint. See
+[Data-Portability-and-Access](../02-architecture/Data-Portability-and-Access.md).
 
 ## Validating a model
 

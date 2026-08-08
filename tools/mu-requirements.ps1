@@ -28,6 +28,7 @@ $Mnemonic = @{
   'MMAS-Core' = 'MMAS-CORE'; 'MMAS-Conformance' = 'MMAS-CONF'; 'MMAS-Package' = 'MMAS-PKG';
   'MMAS-Interchange' = 'MUIF'; 'Versioning' = 'VER'; 'Naming-Conventions' = 'NAME';
   'Traceability' = 'TRACE'; 'Extension-Model' = 'EXT'; 'Validation' = 'VAL';
+  'Data-Portability-and-Access' = 'DATAPO';
   'MUFP' = 'MUFP'; 'MUFP-Messages' = 'MUFPM'; 'Identity-Binding' = 'IDB'; 'Federation-Contracts' = 'FEDC';
   'Trust-Model' = 'TRUST'; 'Consent-and-Disclosure' = 'DISC'; 'Semantic-Mapping' = 'MAP';
   'Synchronization' = 'SYNC'; 'Conflict-Resolution' = 'CONFL'; 'Federation-Lifecycle' = 'FEDL';

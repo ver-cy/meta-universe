@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ver.cy/schemas/mmas/2.1/coverage-proof.schema.json",
+  "title": "MMAS 2.1 Traversal Coverage Proof",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["bindingRef", "traversalRef", "planDigest", "snapshot", "mode", "counts", "units", "inventoryDigest"],
+  "properties": {
+    "bindingRef": { "type": "string" },
+    "traversalRef": { "type": "string" },
+    "planDigest": { "$ref": "#/$defs/digest" },
+    "snapshot": { "type": "object", "required": ["scheme", "value"], "properties": { "scheme": { "type": "string" }, "value": { "type": "string" } }, "additionalProperties": false },
+    "mode": { "enum": ["semantic-units", "bytes", "declared-scope"] },
+    "counts": {
+      "type": "object", "additionalProperties": false, "required": ["included", "excluded", "skipped", "failed", "orphan", "ambiguous"],
+      "properties": { "included": { "type": "integer", "minimum": 0 }, "excluded": { "type": "integer", "minimum": 0 }, "skipped": { "type": "integer", "minimum": 0 }, "failed": { "type": "integer", "minimum": 0 }, "orphan": { "type": "integer", "minimum": 0 }, "ambiguous": { "type": "integer", "minimum": 0 } }
+    },
+    "units": {
+      "type": "array", "items": {
+        "type": "object", "additionalProperties": false, "required": ["unitId", "locator", "disposition"],
+        "properties": {
+          "unitId": { "type": "string" },
+          "locator": { "type": "string" },
+          "disposition": { "enum": ["included", "excluded", "skipped", "failed", "orphan", "ambiguous"] },
+          "reason": { "type": "string" },
+          "contentDigest": { "$ref": "#/$defs/digest" },
+          "representationRef": { "type": "string" },
+          "kind": { "type": "string" },
+          "origin": { "enum": ["authored", "harvested", "generated"] }
+        },
+        "allOf": [{ "if": { "properties": { "disposition": { "enum": ["excluded", "skipped", "failed", "orphan", "ambiguous"] } }, "required": ["disposition"] }, "then": { "required": ["reason"] } }]
+      }
+    },
+    "inventoryDigest": { "$ref": "#/$defs/digest" },
+    "complete": { "type": "boolean" },
+    "limitations": { "type": "array", "items": { "type": "string" } },
+    "generatedAt": { "type": "string", "format": "date-time" }
+  },
+  "allOf": [{ "if": { "properties": { "mode": { "const": "bytes" } }, "required": ["mode"] }, "then": { "properties": { "units": { "items": { "if": { "properties": { "disposition": { "const": "included" } }, "required": ["disposition"] }, "then": { "required": ["contentDigest"] } } } } } }],
+  "$defs": {
+    "digest": {
+      "type": "object", "additionalProperties": false, "required": ["algorithm", "value"],
+      "properties": { "algorithm": { "enum": ["sha256", "sha384", "sha512", "blake3"] }, "value": { "type": "string", "pattern": "^[A-Fa-f0-9]+$" } }
+    }
+  }
+}

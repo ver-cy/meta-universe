@@ -6,6 +6,26 @@ This project follows the evolution and versioning rules defined in
 
 ## [Unreleased]
 
+### Added — MMAS 2.1 data portability
+- **Data-Portability-and-Access** (Normative, MU-V2-ARCH-019): separates Dataset
+  logical structure, Representation, Carrier/Locator, AccessBinding,
+  TraversalPlan, CoverageProof and Package so the same semantic data can be
+  stored and traversed across package trees, filesystems, Git, databases,
+  object stores, HTTP and MCP without changing identity or mastership.
+- JSON Schemas for DatasetBindings and CoverageProofs, plus three cross-carrier
+  golden examples: AISMM Git/Markdown, parameterized SQL, and read-only MCP/HTML.
+- Explicit Markdown profiles (CommonMark/GFM, front matter, block selectors,
+  orphan narrative) and safe HTML profiles (document/fragment, CSS/XPath,
+  structured data, base URI, scripts and external resources).
+
+### Changed — MMAS 2.1 data portability
+- ARCH-017 is now explicitly the backward-compatible `package-tree-walk`
+  specialization of generalized traversal; ARCH-007 defines SDP 1.1 bindings,
+  coverage proofs and separate semantic/package fingerprints; ARCH-018 links
+  mastership entries to one or more physical DatasetBindings.
+- Fixed the duplicate specification identifier for Vercy-Repositories
+  (`MU-V2-ECO-012`).
+
 ### Added
 - **Model-Traversal-and-Layout** (Normative, MU-V2-ARCH-017,
   `02-architecture/`): the lossless traversal contract for Meta-Model

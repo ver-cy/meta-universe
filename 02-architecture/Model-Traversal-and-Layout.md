@@ -5,7 +5,7 @@
 **Document ID:** MU-V2-ARCH-017  
 **Title:** Meta-Model Architecture Standard - Lossless Traversal and Well-Known Locations  
 **Document Class:** Normative  
-**Version:** 2.0 (Draft)  
+**Version:** 2.1 (Draft)
 **Status:** Working Draft  
 **Normative References:** MMAS-Core, MMAS-Package, Versioning, Validation, Data-Mastership  
 **Informative References:** Traceability, AI-Agent-Guide, Repository-Structure  
@@ -18,7 +18,7 @@
 
 [MMAS-Package](MMAS-Package.md) defines *where things live* in a Meta-Model repository. This document defines the two guarantees that layout alone cannot give:
 
-1. **Lossless traversal.** A reader (human or AI agent) SHALL be able to walk the entire model bundle by bundle, layer by layer, visiting **every file exactly once**, knowing **what each file means**, and **proving that nothing was missed**.
+1. **Lossless package-tree traversal.** A reader (human or AI agent) SHALL be able to walk the entire model bundle by bundle, layer by layer, visiting **every file exactly once**, knowing **what each file means**, and **proving that nothing was missed**.
 2. **Well-known locations.** Content that is not a semantic definition (raw source data, canonical source texts, generated artifacts, operating instructions) SHALL live in reserved locations with predefined meaning, so a reader never has to guess what a file is.
 
 Together with [Data-Mastership](Data-Mastership.md), which declares *who owns the truth* for every dataset, this makes a Meta-Model fully mechanically readable: nothing lost, nothing ambiguous, nothing of unknown authority.
@@ -34,7 +34,7 @@ This specification applies to:
 - all files contained in a model repository, without exception;
 - walkers: any tool or agent that enumerates model content.
 
-It does not redefine the semantics of Objects, Relationships, Events, Contracts or Projections; it governs how their carrier files are found, ordered and classified.
+It does not redefine the semantics of Objects, Relationships, Events, Contracts or Projections; it governs how their package-tree carrier files are found, ordered and classified. [Data-Portability-and-Access](Data-Portability-and-Access.md) generalizes this contract to databases, object stores, HTTP and MCP, and defines this document as the canonical `package-tree-walk` profile.
 
 ---
 
@@ -110,7 +110,7 @@ Every file in the repository SHALL fall into exactly one of three classes:
 2. **Well-known** - located under a reserved location of §6, inheriting its default meaning;
 3. **Excluded** - matched by the manifest's exclusion list (`exclude:`), which names infrastructure files with no semantic content (VCS internals, CI configuration, editor settings, build caches).
 
-The **coverage check**: a walker SHALL be able to compare the full recursive file listing of the repository against the union of the three classes. Files in no class ("orphans") and files in more than one class ("ambiguous") are validation failures. The coverage check is part of **structural validation (V1)** in [Validation](Validation.md).
+The **coverage check**: a walker SHALL be able to compare the full recursive file listing of the repository against the union of the three classes. Files in no class ("orphans") and files in more than one class ("ambiguous") are validation failures. The coverage check is part of **structural validation (V1)** in [Validation](Validation.md) and is the package-tree specialization of an ARCH-019 CoverageProof.
 
 The exclusion list is a declaration, not a dumping ground: excluding a file asserts it carries **no model meaning**. Excluding semantic content to pass the coverage check is non-conforming.
 
@@ -187,7 +187,7 @@ Layout and traversal SHALL NEVER redefine semantic meaning; they only make it re
 
 # 13. Future Directions
 
-A reference walker (`mu-walk`) is a natural companion to the existing tools: it would perform the canonical walk, emit a machine-readable walk report (files, kinds, origins, coverage result, mirror freshness) and serve as the executable definition of this document. A walk report could become part of the Semantic Distribution Package, letting consumers verify completeness before trusting a package.
+A reference walker (`mu-walk`) is a natural companion to the existing tools: it would perform the canonical walk and emit an ARCH-019 CoverageProof (files, kinds, origins, plan and snapshot fingerprints, exclusions, coverage result, mirror freshness). The proof can travel in an SDP so consumers verify completeness before trusting a package.
 
 ---
 

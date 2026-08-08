@@ -32,6 +32,8 @@ traceability. It is a specification, not a runtime.
 |----------|-----|
 | `spec-index.yaml` | Enumerate documents and their status. |
 | `schemas/*.schema.json` | Validate MUIF models, MUFP envelopes, discovery and validation reports (JSON Schema 2020-12). |
+| `schemas/dataset-binding.schema.json` | Validate MMAS 2.1 logical structure, representation, carrier, access and traversal bindings. |
+| `schemas/coverage-proof.schema.json` | Validate deterministic traversal inventories and completeness proofs. |
 | `REQUIREMENTS-INDEX.md` | Address individual normative requirements by ID. |
 | `mu-fingerprint` (see `tools/`) | Compute the reproducible Semantic Fingerprint of a model. |
 | `mu-validate` (see `tools/`) | Validate a MUIF model against the V0–V2 checks. |
@@ -43,6 +45,7 @@ traceability. It is a specification, not a runtime.
 - `examples/federation-acme-govtax/` — two universes federate end-to-end.
 - `examples/federation-handshake/` — a MUFP message transcript.
 - `examples/interop/` — mapping to RDF/OWL, Schema.org, FHIR, FOAF.
+- `examples/data-bindings/` — portable Git/Markdown, SQL and MCP/HTML bindings.
 
 ## Working ON a conformant model (not this spec repo)
 

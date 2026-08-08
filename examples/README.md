@@ -27,6 +27,7 @@ illustrate the Meta-Universe standards in practice. Every example is machine-che
 | [`minimal-person`](minimal-person/) | The smallest complete MUIF meta-model; one model in two serializations proving the **Semantic Fingerprint** is serialization-independent; a passing **Validation Report**. |
 | [`federation-handshake`](federation-handshake/) | A 10-envelope [MUFP](../03-federation/MUFP-Messages.md) handshake walking the protocol state machine. |
 | [`federation-acme-govtax`](federation-acme-govtax/) | **The golden end-to-end example.** Two sovereign universes with different vocabularies federate over one Person — Identity → Mapping → Contract → Projection → Synchronization → Conflict — with real fingerprints, validation reports and a 17-envelope transcript (data moves only at message 14). |
+| [`data-bindings`](data-bindings/) | MMAS 2.1 portable bindings for Git + Markdown, SQL and MCP + safe HTML, including deterministic traversal and coverage policy. |
 
 # Why this folder is intentionally small
 

@@ -1,0 +1,24 @@
+{
+  "id": "binding.release-catalog.sql",
+  "dataset": { "id": "release-catalog", "mastershipRef": "sources.yaml#release-catalog", "description": "Released software components" },
+  "structure": { "kind": "table", "schemaRef": "https://example.org/schemas/release.json", "identityKeys": ["release_id"], "ordering": "key", "partitionKeys": ["product_id"] },
+  "representations": [{ "id": "rep.release-json", "mediaType": "application/json", "profile": "https://example.org/profiles/release-row/v1", "role": "semantic-primary", "encoding": "utf-8" }],
+  "carrier": {
+    "kind": "relational-db",
+    "locator": { "scheme": "sql", "value": "postgresql://catalog.example.org/software", "resource": "public.release" }
+  },
+  "access": [{ "id": "access.release-query", "protocol": "sql", "operations": ["query", "read"], "operationClass": "read", "credentialRef": "secret://catalog/readonly" }],
+  "traversal": [
+    {
+      "id": "query.releases",
+      "algorithm": "sql-query",
+      "order": ["product_id ASC", "release_id ASC"],
+      "query": "SELECT release_id, product_id, version, released_at FROM public.release WHERE released_at >= :since ORDER BY product_id, release_id",
+      "parameters": { "since": "2026-01-01T00:00:00Z" },
+      "snapshot": { "scheme": "db-snapshot", "value": "snapshot-2026-08-08T21:00:00Z" },
+      "pagination": { "strategy": "keyset", "pageSize": 1000, "stableKeys": ["product_id", "release_id"] },
+      "coverage": { "mode": "declared-scope", "proofRequired": true }
+    }
+  ],
+  "package": { "mode": "reference", "packageFingerprintPolicy": "sha256-binding-snapshot-and-inventory" }
+}

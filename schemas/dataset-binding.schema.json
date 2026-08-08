@@ -1,0 +1,247 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ver.cy/schemas/mmas/2.1/dataset-binding.schema.json",
+  "title": "MMAS 2.1 Dataset Binding",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "dataset", "structure", "representations", "carrier", "access", "traversal"],
+  "properties": {
+    "id": { "$ref": "#/$defs/id" },
+    "dataset": {
+      "type": "object", "additionalProperties": false, "required": ["id", "mastershipRef"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "description": { "type": "string" },
+        "mastershipRef": { "type": "string" }
+      }
+    },
+    "structure": { "$ref": "#/$defs/structure" },
+    "representations": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/representation" } },
+    "carrier": { "$ref": "#/$defs/carrier" },
+    "access": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/access" } },
+    "traversal": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/traversal" } },
+    "compatibility": {
+      "type": "array", "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["representationRef", "accessRef", "traversalRef"],
+        "properties": {
+          "representationRef": { "$ref": "#/$defs/id" },
+          "accessRef": { "$ref": "#/$defs/id" },
+          "traversalRef": { "$ref": "#/$defs/id" }
+        }
+      }
+    },
+    "package": { "$ref": "#/$defs/package" },
+    "extensions": { "type": "object", "additionalProperties": true }
+  },
+  "$defs": {
+    "id": { "type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]{0,255}$" },
+    "uri": { "type": "string", "format": "uri" },
+    "digest": {
+      "type": "object", "additionalProperties": false, "required": ["algorithm", "value"],
+      "properties": {
+        "algorithm": { "enum": ["sha256", "sha384", "sha512", "blake3"] },
+        "value": { "type": "string", "pattern": "^[A-Fa-f0-9]+$" }
+      }
+    },
+    "structure": {
+      "type": "object", "additionalProperties": false, "required": ["kind"],
+      "properties": {
+        "kind": { "enum": ["record", "table", "tree", "graph", "document", "stream", "binary", "hybrid"] },
+        "schemaRef": { "$ref": "#/$defs/uri" },
+        "identityKeys": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
+        "ordering": { "enum": ["unordered", "declared", "key", "event-time"] },
+        "partitionKeys": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
+        "rootType": { "type": "string" }
+      }
+    },
+    "representation": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "mediaType", "role"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "mediaType": { "type": "string", "pattern": "^[A-Za-z0-9!#$&^_.+-]+/[A-Za-z0-9!#$&^_.+-]+$" },
+        "profile": { "$ref": "#/$defs/uri" },
+        "role": { "enum": ["semantic-primary", "alternate", "evidence", "projection-output", "package-manifest"] },
+        "encoding": { "type": "string", "default": "utf-8" },
+        "compression": { "enum": ["none", "gzip", "zstd", "zip", "other"] },
+        "container": { "type": "string" },
+        "documentModel": { "type": "string" },
+        "parserRef": { "$ref": "#/$defs/id" },
+        "extractorRef": { "$ref": "#/$defs/id" },
+        "canonicalization": { "type": "string" },
+        "loss": { "type": "array", "items": { "type": "string" } },
+        "markdown": { "$ref": "#/$defs/markdown" },
+        "html": { "$ref": "#/$defs/html" }
+      },
+      "allOf": [
+        { "if": { "properties": { "mediaType": { "const": "text/markdown" } }, "required": ["mediaType"] }, "then": { "required": ["markdown"] } },
+        { "if": { "properties": { "mediaType": { "const": "text/html" } }, "required": ["mediaType"] }, "then": { "required": ["html"] } }
+      ]
+    },
+    "markdown": {
+      "type": "object", "additionalProperties": false, "required": ["dialect", "orphanNarrative"],
+      "properties": {
+        "dialect": { "enum": ["commonmark", "gfm", "extension"] },
+        "dialectProfile": { "$ref": "#/$defs/uri" },
+        "frontMatter": { "type": "array", "uniqueItems": true, "items": { "enum": ["yaml", "toml", "json"] } },
+        "selectors": { "type": "array", "items": { "$ref": "#/$defs/selector" } },
+        "allowRawHtml": { "type": "boolean", "default": false },
+        "orphanNarrative": { "enum": ["semantic", "evidence", "ignore", "error"] },
+        "linkResolution": { "enum": ["document-base", "binding-base", "absolute-only"] }
+      }
+    },
+    "html": {
+      "type": "object", "additionalProperties": false, "required": ["documentKind", "scripts", "externalResources"],
+      "properties": {
+        "documentKind": { "enum": ["document", "fragment"] },
+        "selectors": { "type": "array", "items": { "$ref": "#/$defs/selector" } },
+        "structuredData": { "type": "array", "uniqueItems": true, "items": { "enum": ["microdata", "rdfa", "json-ld"] } },
+        "scripts": { "enum": ["reject", "strip", "allow-trusted"] },
+        "externalResources": { "enum": ["reject", "declared-only", "allow-trusted"] },
+        "allowedTargets": { "type": "array", "uniqueItems": true, "items": { "type": "string", "format": "uri" } },
+        "baseUri": { "$ref": "#/$defs/uri" }
+      },
+      "allOf": [{ "if": { "properties": { "externalResources": { "const": "declared-only" } }, "required": ["externalResources"] }, "then": { "required": ["allowedTargets"] } }]
+    },
+    "selector": {
+      "type": "object", "additionalProperties": false, "required": ["kind", "value"],
+      "properties": {
+        "kind": { "enum": ["heading", "block-marker", "fenced-block", "line-range", "css", "xpath", "json-pointer", "fragment", "symbol"] },
+        "value": { "type": "string", "minLength": 1 },
+        "multiple": { "type": "boolean", "default": false }
+      }
+    },
+    "snapshot": {
+      "type": "object", "additionalProperties": false, "required": ["scheme", "value"],
+      "properties": {
+        "scheme": { "enum": ["git-commit", "inventory-digest", "db-snapshot", "object-version", "etag", "mcp-revision", "timestamp", "extension"] },
+        "value": { "type": "string", "minLength": 1 },
+        "observedAt": { "type": "string", "format": "date-time" }
+      }
+    },
+    "carrier": {
+      "type": "object", "additionalProperties": false, "required": ["kind", "locator"],
+      "properties": {
+        "kind": { "enum": ["package-tree", "filesystem", "git", "relational-db", "document-db", "graph-db", "object-store", "http", "mcp", "extension"] },
+        "locator": { "$ref": "#/$defs/locator" },
+        "integrity": { "$ref": "#/$defs/digest" },
+        "extensionId": { "$ref": "#/$defs/uri" },
+        "extension": { "type": "object", "additionalProperties": true }
+      },
+      "allOf": [
+        { "if": { "properties": { "kind": { "const": "extension" } }, "required": ["kind"] }, "then": { "required": ["extensionId", "extension"] } }
+      ]
+    },
+    "locator": {
+      "type": "object", "additionalProperties": false, "required": ["scheme", "value"],
+      "properties": {
+        "scheme": { "enum": ["path", "git", "sql", "mongodb", "cypher", "s3", "gs", "azblob", "https", "http", "mcp", "urn", "extension"] },
+        "value": { "type": "string", "minLength": 1, "maxLength": 4096 },
+        "subpath": { "type": "string" },
+        "ref": { "type": "string" },
+        "resource": { "type": "string" },
+        "namespace": { "type": "string" },
+        "addressFragment": {
+          "type": "object", "additionalProperties": false, "required": ["kind", "value"],
+          "properties": {
+            "kind": { "enum": ["path", "object-key", "table", "collection", "graph", "resource", "row-key", "version"] },
+            "value": { "type": "string", "minLength": 1 }
+          }
+        }
+      }
+    },
+    "access": {
+      "type": "object", "additionalProperties": false, "required": ["id", "protocol", "operations", "operationClass"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "protocol": { "enum": ["local-fs", "git", "https", "sql", "mongodb", "cypher", "s3", "mcp", "extension"] },
+        "operations": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "enum": ["list", "read", "query", "subscribe", "write", "propose-change"] } },
+        "operationClass": { "enum": ["read", "write", "side-effect"] },
+        "credentialRef": { "type": "string" },
+        "capabilities": { "type": "object", "additionalProperties": true },
+        "allowedTargets": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
+        "rateLimit": { "type": "string" }
+      }
+    },
+    "traversal": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "algorithm", "snapshot", "order", "coverage"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "algorithm": { "enum": ["package-tree-walk", "filesystem-walk", "git-tree-walk", "sql-query", "document-query", "graph-query", "object-list", "http-pagination", "mcp-resource-list", "mcp-tool", "extension"] },
+        "roots": { "type": "array", "items": { "type": "string" } },
+        "include": { "type": "array", "items": { "type": "string" } },
+        "exclude": { "type": "array", "items": { "type": "string" } },
+        "ignoreFiles": { "type": "array", "items": { "type": "string" } },
+        "hidden": { "enum": ["include", "exclude", "declared-only"], "default": "exclude" },
+        "maxDepth": { "type": "integer", "minimum": 0 },
+        "caseSensitive": { "type": "boolean", "default": true },
+        "symlinks": { "enum": ["error", "record-as-link", "follow"], "default": "error" },
+        "submodules": { "enum": ["exclude", "record", "recurse"], "default": "exclude" },
+        "gitLfs": { "enum": ["pointer", "resolve", "error"], "default": "pointer" },
+        "snapshot": { "$ref": "#/$defs/snapshot" },
+        "order": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+        "query": { "type": "string" },
+        "parameters": { "type": "object", "additionalProperties": true },
+        "pagination": { "$ref": "#/$defs/pagination" },
+        "mcp": { "$ref": "#/$defs/mcp" },
+        "parserRules": { "type": "array", "items": { "$ref": "#/$defs/parserRule" } },
+        "coverage": {
+          "type": "object", "additionalProperties": false, "required": ["mode", "proofRequired"],
+          "properties": {
+            "mode": { "enum": ["semantic-units", "bytes", "declared-scope"] },
+            "proofRequired": { "type": "boolean" }
+          }
+        }
+      },
+      "allOf": [
+        { "if": { "properties": { "algorithm": { "enum": ["sql-query", "document-query", "graph-query"] } }, "required": ["algorithm"] }, "then": { "required": ["query", "pagination", "snapshot"] } },
+        { "if": { "properties": { "algorithm": { "enum": ["object-list", "http-pagination"] } }, "required": ["algorithm"] }, "then": { "required": ["pagination", "snapshot"] } },
+        { "if": { "properties": { "algorithm": { "enum": ["package-tree-walk", "filesystem-walk", "git-tree-walk"] } }, "required": ["algorithm"] }, "then": { "required": ["hidden", "symlinks", "snapshot"] } },
+        { "if": { "properties": { "algorithm": { "enum": ["mcp-resource-list", "mcp-tool"] } }, "required": ["algorithm"] }, "then": { "required": ["mcp"] } }
+      ]
+    },
+    "pagination": {
+      "type": "object", "additionalProperties": false, "required": ["strategy"],
+      "properties": {
+        "strategy": { "enum": ["none", "cursor", "keyset", "offset", "link-header", "continuation-token"] },
+        "pageSize": { "type": "integer", "minimum": 1, "maximum": 100000 },
+        "cursorField": { "type": "string" },
+        "stableKeys": { "type": "array", "items": { "type": "string" } }
+      },
+      "allOf": [{ "if": { "properties": { "strategy": { "not": { "const": "none" } } }, "required": ["strategy"] }, "then": { "required": ["pageSize"] } }]
+    },
+    "mcp": {
+      "type": "object", "additionalProperties": false, "required": ["mode"],
+      "properties": {
+        "mode": { "enum": ["resource", "tool"] },
+        "resourceUriTemplate": { "type": "string" },
+        "toolName": { "type": "string" },
+        "arguments": { "type": "object", "additionalProperties": true },
+        "cursorField": { "type": "string" }
+      }
+    },
+    "parserRule": {
+      "type": "object", "additionalProperties": false, "required": ["parserRef"],
+      "properties": {
+        "mediaType": { "type": "string" },
+        "profile": { "$ref": "#/$defs/uri" },
+        "pathPattern": { "type": "string" },
+        "parserRef": { "$ref": "#/$defs/id" },
+        "extractorRef": { "$ref": "#/$defs/id" }
+      }
+    },
+    "package": {
+      "type": "object", "additionalProperties": false,
+      "required": ["mode", "packageFingerprintPolicy"],
+      "properties": {
+        "mode": { "enum": ["embed", "reference", "hybrid"] },
+        "packageFingerprintPolicy": { "type": "string" },
+        "semanticFingerprintRef": { "type": "string" },
+        "coverageProofRef": { "type": "string" },
+        "signatureRef": { "type": "string" }
+      }
+    }
+  }
+}

@@ -5,9 +5,9 @@
 **Document ID:** MU-V2-ARCH-007  
 **Title:** Meta-Model Architecture Standard — Repository and Package Structure  
 **Document Class:** Normative  
-**Version:** 2.0 (Draft)  
+**Version:** 2.1 (Draft)
 **Status:** Working Draft  
-**Normative References:** Meta-Universe Constitution (MUC), MMAS-Core, Versioning  
+**Normative References:** Meta-Universe Constitution (MUC), MMAS-Core, Versioning, Data-Portability-and-Access
 **Informative References:** Extension-Model, MMAS-Conformance, Meta-Universe Federation Protocol (MUFP), Model-Traversal-and-Layout, Data-Mastership  
 **Copyright:** © Orkestron.AI  
 **License:** Apache-2.0
@@ -208,15 +208,17 @@ A distributable MMAS package SHALL preserve:
 - semantic references;
 - version metadata.
 
-Packaging format is implementation-specific.
+The canonical directory is the default **package-tree carrier profile**, not the universal ontology of a package. Every non-package-tree distribution SHALL describe its logical structure, representations, carrier, access bindings and traversal/query plans according to [Data-Portability-and-Access](Data-Portability-and-Access.md).
 
-Examples include Git repositories, archives or registries.
+Archives, Git repositories, registries, databases and MCP services are lawful carriers only when their binding makes content scope, snapshot, enumeration and integrity mechanically verifiable. A filename extension or repository URL alone is insufficient.
 
 ---
 
 # 13. Semantic Distribution Package (SDP)
 
-While Section 4 defines the canonical *repository* layout, federation requires a portable, publishable *distribution* unit. A **Semantic Distribution Package (SDP)** is that unit: a single, signed, self-contained artifact that carries a Meta-Model (or a bounded part of it) together with everything needed to verify, place and use it in another universe — analogous to a Maven, npm or OCI artifact, but for semantic models rather than code or images.
+While Section 4 defines the canonical *repository* layout, federation requires a portable, publishable *distribution* unit. A **Semantic Distribution Package (SDP)** is that unit: a signed, self-describing artifact that embeds content, references immutable content, or combines both, together with everything needed to verify, place and use it in another universe — analogous to a Maven, npm or OCI artifact, but for semantic models rather than code or images.
+
+An SDP 1.1 manifest SHALL carry or reference DatasetBindings and their CoverageProofs. It SHALL distinguish the semantic fingerprint from package/content fingerprints: relocating or repackaging data must not change semantic identity, while any changed byte inventory must be detectable.
 
 A conforming SDP SHALL contain:
 

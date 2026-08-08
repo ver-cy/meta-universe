@@ -5,9 +5,9 @@
 **Document ID:** MU-V2-ARCH-018  
 **Title:** Meta-Model Architecture Standard - Data Mastership and Systems of Record  
 **Document Class:** Normative  
-**Version:** 2.0 (Draft)  
+**Version:** 2.1 (Draft)
 **Status:** Working Draft  
-**Normative References:** MMAS-Core, MMAS-Package, Model-Traversal-and-Layout, Traceability  
+**Normative References:** MMAS-Core, MMAS-Package, Model-Traversal-and-Layout, Data-Portability-and-Access, Traceability
 **Informative References:** Synchronization, Extension-Model, Provenance-Graph, AI-Agent-Guide  
 **Copyright:** © Orkestron.AI  
 **License:** Apache-2.0
@@ -119,6 +119,9 @@ Each entry SHALL declare:
 | `cadence` | How often the flow runs; for mirrors, also `staleness_limit` |
 | `conflict_rule` | Restatement of who wins, plus escalation contact (`steward`) |
 | `status` | Lifecycle of the flow: `active` (default), `declared`, `suspended`, `retired` |
+| `binding_refs` | One or more ARCH-019 DatasetBindings that say where, how and at which snapshot the dataset is accessed |
+
+`system`, `model_location` and `pipeline` remain valid human-oriented summaries. When a dataset uses a non-package-tree carrier, automated traversal, more than one representation, or more than one access protocol, it SHALL provide `binding_refs` (or equivalent inline DatasetBindings). Mastership remains singular even when bindings are plural: a mirror, API and package may expose the same dataset without becoming additional Systems of Record.
 
 **Declared entries.** Real models pass through a transitional state the register must be able to tell the truth about: mastership is decided but the flow is not yet built - a mirror location exists but has never been harvested, or a write-back is agreed but no pipeline publishes it. Such entries SHALL carry `status: declared`. A declared entry is lawful, but it is **open debt, not operation**: a declared mirror SHALL NOT be presented as fresh (it has no harvest time at all), and a declared write-back gives no drift protection. Hiding the transitional state by omitting the entry, or by marking it `active`, is non-conforming; the register exists precisely to make this state visible.
 
@@ -205,13 +208,13 @@ Mastership SHALL preserve:
 - disposability of every non-master copy;
 - constitutional compliance.
 
-Mastership SHALL NEVER be implied by physical location alone: location gives a default reading, the register gives the law.
+Mastership SHALL NEVER be implied by physical location alone: a DatasetBinding says where and how; the register says whose truth wins.
 
 ---
 
 # 13. Future Directions
 
-Two natural extensions: a **connector profile** format describing harvest/publish pipelines for common systems (Confluence, Jira, Notion, relational stores) so registers can reference typed connectors rather than ad-hoc scripts; and surfacing register entries in the **Semantic Distribution Package**, so a consumer of a packaged model sees immediately which parts are authored knowledge and which are mirrors of someone's wiki.
+ARCH-019 DatasetBindings provide the common connector surface for files, Git, databases, object stores, HTTP and MCP. Future ecosystem profiles may standardize vendor-specific capabilities without changing mastership law. Surfacing register entries and bindings in an SDP lets a consumer see immediately which parts are authored knowledge and which are mirrors of an external source.
 
 ---
 
