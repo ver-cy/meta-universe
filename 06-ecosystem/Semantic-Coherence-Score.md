@@ -9,7 +9,7 @@
 **Status:** Working Draft  
 **Normative References:** None  
 **Informative References:** [Validation](../02-architecture/Validation.md), [Certification](../06-ecosystem/Certification.md), [Traceability](../02-architecture/Traceability.md), [Event](../04-core-concepts/Event.md), [Provenance-Graph](../02-architecture/Provenance-Graph.md)  
-**Copyright:** © Orkestron.AI  
+**Copyright:** © Vercy  
 **License:** Apache-2.0
 
 ---

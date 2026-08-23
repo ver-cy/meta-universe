@@ -9,7 +9,7 @@
 **Status:** Working Draft  
 **Normative References:** [MMAS-Core](../02-architecture/MMAS-Core.md), [Versioning](../02-architecture/Versioning.md), [Naming-Conventions](../02-architecture/Naming-Conventions.md), RFC 8785 (JSON Canonicalization Scheme), RFC 2119  
 **Informative References:** [Validation](../02-architecture/Validation.md), [MMAS-Package](../02-architecture/MMAS-Package.md), [Extension-Model](../02-architecture/Extension-Model.md)  
-**Copyright:** © Orkestron.AI  
+**Copyright:** © Vercy  
 **License:** Apache-2.0
 
 ---

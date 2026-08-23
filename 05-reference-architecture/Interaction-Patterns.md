@@ -9,7 +9,7 @@
 **Status:** Working Draft  
 **Normative References:** Meta-Universe Constitution (MUC), MMAS, MUFP  
 **Informative References:** Architecture, Meta-Universe Stack, Core Concepts  
-**Copyright:** © Orkestron.AI  
+**Copyright:** © Vercy  
 **License:** Apache-2.0
 
 ---

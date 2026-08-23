@@ -9,7 +9,7 @@
 **Status:** Working Draft  
 **Normative References:** [MUFP](../03-federation/MUFP.md), [Federation-Lifecycle](../03-federation/Federation-Lifecycle.md), [Federation-Contracts](../03-federation/Federation-Contracts.md), [Trust-Model](../03-federation/Trust-Model.md), [MMAS-Interchange](../02-architecture/MMAS-Interchange.md), RFC 2119, RFC 8259  
 **Informative References:** [Identity-Binding](../03-federation/Identity-Binding.md), [Consent-and-Disclosure](../03-federation/Consent-and-Disclosure.md), [Synchronization](../03-federation/Synchronization.md)  
-**Copyright:** © Orkestron.AI  
+**Copyright:** © Vercy  
 **License:** Apache-2.0
 
 ---

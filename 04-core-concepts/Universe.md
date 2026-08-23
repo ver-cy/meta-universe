@@ -9,7 +9,7 @@
 **Status:** Working Draft  
 **Normative References:** MUC, MUFP  
 **Informative References:** [Dimension](../04-core-concepts/Dimension.md), [Namespace](../04-core-concepts/Namespace.md), [Identity](../04-core-concepts/Identity.md)  
-**Copyright:** © Orkestron.AI  
+**Copyright:** © Vercy  
 **License:** Apache-2.0
 
 ---

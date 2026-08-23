@@ -8,8 +8,8 @@
 **Version:** 2.0 (Draft)  
 **Status:** Working Draft  
 **Normative References:** None  
-**Informative References:** [MUC](../01-constitution/MUC.md), [Event](../04-core-concepts/Event.md), [Trust-Model](../03-federation/Trust-Model.md), [External-Models-Registry](External-Models-Registry.md), [Meta-Model-Composition](../02-architecture/Meta-Model-Composition.md), [Case-Study-Orkestron-Ecosystem](Case-Study-Orkestron-Ecosystem.md)  
-**Copyright:** © Orkestron.AI  
+**Informative References:** [MUC](../01-constitution/MUC.md), [Event](../04-core-concepts/Event.md), [Trust-Model](../03-federation/Trust-Model.md), [External-Models-Registry](External-Models-Registry.md), [Meta-Model-Composition](../02-architecture/Meta-Model-Composition.md)  
+**Copyright:** © Vercy  
 **License:** Apache-2.0
 
 ---
@@ -18,13 +18,13 @@
 
 This case study documents the largest known application of Meta-Universe concepts: modelling an **entire polity** (a state) as one Meta-Universe Dimension.
 
-The subject is the **Meta-Orchestrator State (MOS)**: a simulation of a state governed by balancing multidimensional flows of value rather than by taxation, populated by 2,000 to 3,000 autonomous AI-agent citizens. Its governing doctrine is **Axiacracy** ("governance by value"), published for a human audience at [axiacra.cy](https://axiacra.cy); the methodology and simulation blueprint are open at [orkestron-ai/meta-orchestrator-state](https://github.com/orkestron-ai/meta-orchestrator-state) (Apache-2.0).
+The subject is the **Meta-Orchestrator State (MOS)**: a simulation of a state governed by balancing multidimensional flows of value rather than by taxation, populated by 2,000 to 3,000 autonomous AI-agent citizens. Its governing doctrine is **Axiacracy** ("governance by value"), published for a human audience at [axiacra.cy](https://axiacra.cy); the methodology and simulation blueprint are open at [ver-cy/meta-orchestrator-state](https://github.com/ver-cy/meta-orchestrator-state) (Apache-2.0).
 
 Why it belongs in this specification:
 
 1. **Scale test.** A polity stresses every part of the standard at once: dozens of interdependent namespaces, thousands of live objects, a dense event stream, multiple sovereign perspectives, and a constitutional layer above them all.
 2. **Concept coverage.** MOS independently arrived at structures this standard defines (constitutional anchor, semantic timeline, perspectival projection, federation without an apex), which is evidence the concepts are natural rather than invented.
-3. **A worked "large universe".** The other case study ([Orkestron](Case-Study-Orkestron-Ecosystem.md)) shows an ecosystem of products; this one shows a **civilization-shaped** universe.
+3. **A worked "large universe".** Where the rest of the standard models products and organizations, this one models a **civilization-shaped** universe.
 
 This document is informative and descriptive. It does not endorse the doctrine; it records how a large model maps onto the standard.
 
@@ -83,7 +83,7 @@ The full Dimension is 38 meta-models in six clusters (register: `methodology/met
 
 Notable properties for the standard:
 
-- **Two-thirds reuse.** Most namespaces reuse existing meta-models (from the [Orkestron ecosystem](Case-Study-Orkestron-Ecosystem.md): Persona, Position, TrackRecord, Mission, Contract, ControlPolicy) or bind external standards (§7). Only the substrate and a handful of civic models are genuinely new. Large universes are assembled, not written.
+- **Two-thirds reuse.** Most namespaces reuse existing meta-models (Persona, Position, TrackRecord, Mission, Contract, ControlPolicy) or bind external standards (§7). Only the substrate and a handful of civic models are genuinely new. Large universes are assembled, not written.
 - **Explicit formalization staging.** Each namespace carries a "formalize now / P1 / P2" flag; only 11 are needed for a first runnable region. Universes grow namespace by namespace; the hierarchy does not require completeness to be useful.
 
 ---
@@ -166,6 +166,6 @@ Meta-Universe reading: Objects in a large universe do not need uniform fidelity.
 # 11. Status and references
 
 - Doctrine, for a human audience, in 20 languages: [axiacra.cy](https://axiacra.cy) (Understand · The Value Vector · The System §1-24 · The Charter · Lineage & Critique · The Simulation).
-- Methodology and simulation blueprint: [orkestron-ai/meta-orchestrator-state](https://github.com/orkestron-ai/meta-orchestrator-state), split into `methodology/` (a portable blueprint, applicable to a real polity with humans) and `implementation/` (the agent simulation), with the namespace register `methodology/meta-models.csv`.
+- Methodology and simulation blueprint: [ver-cy/meta-orchestrator-state](https://github.com/ver-cy/meta-orchestrator-state), split into `methodology/` (a portable blueprint, applicable to a real polity with humans) and `implementation/` (the agent simulation), with the namespace register `methodology/meta-models.csv`.
 - Value theory substrate (VMT): [aeilus.tech](https://aeilus.tech).
 - Maturity, in the vocabulary of [Known-Implementations](Known-Implementations.md) §7: **Experimental** (methodology in open draft; simulation in design; doctrine site in production).

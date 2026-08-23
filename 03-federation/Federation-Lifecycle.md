@@ -9,7 +9,7 @@
 **Status:** Working Draft  
 **Normative References:** MUC, MMAS, MUFP, Trust-Model.md, Federation-Contracts.md, Identity-Binding.md, Semantic-Mapping.md, Consent-and-Disclosure.md, Synchronization.md, Conflict-Resolution.md  
 **Informative References:** Federation-Profiles.md  
-**Copyright:** © Orkestron.AI  
+**Copyright:** © Vercy  
 **License:** Apache-2.0
 
 ---

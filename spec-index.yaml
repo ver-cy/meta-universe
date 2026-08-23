@@ -236,11 +236,6 @@ documents:
     class: Informative
     status: "Working Draft"
     path: 06-ecosystem/Connector-Catalogue.md
-  - id: MU-V2-ECO-010
-    title: "Case Study: The Orkestron Ecosystem as a Working Meta-Universe"
-    class: Informative
-    status: "Working Draft"
-    path: 06-ecosystem/Case-Study-Orkestron-Ecosystem.md
   - id: MU-V2-ECO-012
     title: "The Vercy Repository Family"
     class: Informative

@@ -9,7 +9,7 @@
 **Status:** Working Draft  
 **Normative References:** None  
 **Informative References:** Vision, Principles, Terminology, MUC, MMAS-Core, MUFP, Model-Traversal-and-Layout, Data-Mastership, AI-Agent-Guide, Agent-Operations  
-**Copyright:** © Orkestron.AI  
+**Copyright:** © Vercy  
 **License:** Apache-2.0
 
 ---
@@ -77,7 +77,7 @@ The documents are many; the lifecycle they describe is one.
 
 # 6. Reading paths by persona
 
-- **Decision maker (30 min).** [Vision](Vision.md) → this document → [Case Study: Orkestron](../06-ecosystem/Case-Study-Orkestron-Ecosystem.md) and [Case Study: Axiacracy/MOS](../06-ecosystem/Case-Study-Axiacracy-MOS.md) (what it looks like in production and at civilization scale).
+- **Decision maker (30 min).** [Vision](Vision.md) → this document → [Case Study: Axiacracy/MOS](../06-ecosystem/Case-Study-Axiacracy-MOS.md) (what it looks like in production and at civilization scale).
 - **Architect.** [Principles](Principles.md) → [MUC](../01-constitution/Meta-Universe-Constitution.md) → [MMAS-Core](../02-architecture/MMAS-Core.md) → [MUFP](../03-federation/MUFP.md) → [Reference Architecture](../05-reference-architecture/Architecture.md) and [Anti-Patterns](../05-reference-architecture/Anti-Patterns.md).
 - **Model builder.** [Getting-Started](../07-guides/Getting-Started.md) → [Create-a-New-Meta-Model](../07-guides/Create-a-New-Meta-Model.md) → [MMAS-Package](../02-architecture/MMAS-Package.md) → [Model-Traversal-and-Layout](../02-architecture/Model-Traversal-and-Layout.md) → [Data-Mastership](../02-architecture/Data-Mastership.md) → [Extension-Model](../02-architecture/Extension-Model.md) + [External-Models-Registry](../06-ecosystem/External-Models-Registry.md) (reuse before writing).
 - **AI agent (or its author).** [AGENTS.md](../AGENTS.md) → [Agent-Operations](../07-guides/Agent-Operations.md) (operational rules on a live model) → [AI-Agent-Guide](../07-guides/AI-Agent-Guide.md) and [AI-Integration-Patterns](../07-guides/AI-Integration-Patterns.md) (building agents on the standard).
@@ -88,7 +88,7 @@ The documents are many; the lifecycle they describe is one.
 # 7. What exists today (honest status)
 
 - **The specification**: 90 documents, Working Draft, 1284 indexed requirements, machine hub (spec-index, schemas, llms.txt), reference tools and a green test kit. Canonical home: [ver-cy/meta-universe](https://github.com/ver-cy/meta-universe); human portal: [ver.cy](https://ver.cy) (5 languages), spec browser at [ver.cy/spec](https://ver.cy/spec/).
-- **Conformant models in production**: the Orkestron.AI product model and the DevTeam.Games platform model both carry the full ARCH-017/018 shape (entry bootstrap, walk manifest, mastership register, coverage walker at zero orphans, vendored canon, live mastership statuses including a retired system of record and an automated model→site drift watch).
+- **Conformant models in production**: the Vercy product model and the DevTeam.Games platform model both carry the full ARCH-017/018 shape (entry bootstrap, walk manifest, mastership register, coverage walker at zero orphans, vendored canon, live mastership statuses including a retired system of record and an automated model→site drift watch).
 - **Ecosystem**: AISMM v3 (stable) as the flagship domain meta-model; PLMM (draft) above it; 1180 external standards catalogued with compositional roles; two in-depth case studies.
 - **Not yet**: a live registry service, certification, SDKs, and the candidate future standards (SVF, MMQS, SMS, MUDL, Semantic Package Registry) tracked in [Roadmap](../06-ecosystem/Roadmap.md).
 

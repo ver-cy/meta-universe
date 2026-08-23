@@ -9,7 +9,7 @@
 **Status:** Working Draft  
 **Normative References:** None  
 **Informative References:** [Meta-Model-Composition](../02-architecture/Meta-Model-Composition.md), [Extension-Model](../02-architecture/Extension-Model.md), [Semantic-Mapping](../03-federation/Semantic-Mapping.md), [External-Models-Registry](../06-ecosystem/External-Models-Registry.md)  
-**Copyright:** © Orkestron.AI  
+**Copyright:** © Vercy  
 **License:** Apache-2.0
 
 ---

@@ -9,7 +9,7 @@
 **Status:** Working Draft  
 **Normative References:** MUC, MUFP  
 **Informative References:** [Object](../04-core-concepts/Object.md), [Relationship](../04-core-concepts/Relationship.md), [Event](../04-core-concepts/Event.md), [Contract](../04-core-concepts/Contract.md), [Identity](../04-core-concepts/Identity.md)  
-**Copyright:** © Orkestron.AI  
+**Copyright:** © Vercy  
 **License:** Apache-2.0
 
 ---

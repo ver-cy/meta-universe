@@ -9,7 +9,7 @@
 **Status:** Working Draft  
 **Normative References:** MUC, [MMAS-Interchange](../02-architecture/MMAS-Interchange.md), [Validation](../02-architecture/Validation.md), [MUFP-Messages](../03-federation/MUFP-Messages.md), [Discovery](../03-federation/Discovery.md), RFC 2119  
 **Informative References:** [MMAS-Conformance](../02-architecture/MMAS-Conformance.md), [Security-Model](../03-federation/Security-Model.md)  
-**Copyright:** © Orkestron.AI  
+**Copyright:** © Vercy  
 **License:** Apache-2.0
 
 ---

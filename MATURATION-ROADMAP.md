@@ -6,7 +6,7 @@ mature, implementable, citable standard. It is distinct from the product-facing
 [Roadmap](06-ecosystem/Roadmap.md): that one describes where the ecosystem is
 going; this one describes how the *specification itself* is finished and hardened.
 
-Status: Draft · Owner: Orkestron.AI · Consolidates two independent critical
+Status: Draft · Owner: Vercy · Consolidates two independent critical
 reviews (internal "Self" review + Grok review, June 2026).
 
 ---

@@ -9,7 +9,7 @@
 **Status:** Working Draft  
 **Normative References:** MUC, MMAS, MUFP  
 **Informative References:** Registered-Meta-Models, Compatibility-Matrix, Certification, Roadmap  
-**Copyright:** © Orkestron.AI  
+**Copyright:** © Vercy  
 **License:** Apache-2.0  
 
 ---
@@ -118,7 +118,6 @@ Communities can define additional maturity levels.
 
 Illustrative examples:
 
-- Orkestron Platform
 - Software Meta-Model Repository
 - Employee Meta-Model
 - Organization Meta-Model
@@ -127,9 +126,8 @@ Illustrative examples:
 
 These examples are informative and do not imply certification.
 
-Two implementations are documented in depth as case studies:
+One implementation is documented in depth as a case study:
 
-- [Case Study: The Orkestron Ecosystem](Case-Study-Orkestron-Ecosystem.md): a production ecosystem of meta-models (AISMM, PLMM, BKM, agent contracts) and federated realm projections.
 - [Case Study: Axiacracy and the Meta-Orchestrator State](Case-Study-Axiacracy-MOS.md): a whole polity modelled as one Dimension with 38 namespaces; the largest known application of the standard.
 
 ---

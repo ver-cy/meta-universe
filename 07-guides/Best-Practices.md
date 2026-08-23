@@ -9,7 +9,7 @@
 **Status:** Working Draft  
 **Normative References:** MUC, MMAS, MUFP  
 **Informative References:** Design-Recommendations, Create-a-New-Meta-Model, Federation-Guide  
-**Copyright:** © Orkestron.AI  
+**Copyright:** © Vercy  
 **License:** Apache-2.0  
 
 ---

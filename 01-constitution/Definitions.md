@@ -9,7 +9,7 @@
 **Status:** Working Draft  
 **Normative References:** Meta-Universe Constitution (MUC)  
 **Informative References:** ../00-foundation/Terminology.md, ../00-foundation/Glossary.md  
-**Copyright:** © Orkestron.AI  
+**Copyright:** © Vercy  
 **License:** Apache-2.0
 
 ---

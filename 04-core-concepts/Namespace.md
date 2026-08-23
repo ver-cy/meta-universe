@@ -9,7 +9,7 @@
 **Status:** Working Draft  
 **Normative References:** MUC, MMAS, MUFP  
 **Informative References:** [Universe](../04-core-concepts/Universe.md), [Dimension](../04-core-concepts/Dimension.md)  
-**Copyright:** © Orkestron.AI  
+**Copyright:** © Vercy  
 **License:** Apache-2.0
 
 ---

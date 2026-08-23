@@ -17,7 +17,7 @@ two things:
 Please report privately. Do **not** open a public issue or pull request for a
 suspected vulnerability.
 
-- Email the maintainers at **security@orkestron.ai** (or the address listed on the
+- Email the maintainers at **to@ver.cy** (or the address listed on the
   repository's security advisory page).
 - Include: the affected document or tool, the threat, and — for specification
   issues — which [Security Model threat](03-federation/Security-Model.md) (T1–T10)

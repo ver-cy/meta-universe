@@ -9,7 +9,7 @@
 **Status:** Working Draft
 **Normative References:** Registered-Meta-Models, Model-Traversal-and-Layout, Data-Mastership
 **Informative References:** Repository-Structure, Agent-Operations, Known-Implementations
-**Copyright:** © Orkestron.AI
+**Copyright:** © Vercy
 **License:** Apache-2.0
 
 ---
@@ -60,4 +60,4 @@ The operational side, the full process palette with roles, delegation tiers (hum
 
 # 5. Relation to implementations
 
-The Vercy project publishes the standard, the example library, FCD and the process palette. Implementations (products, runtimes, Dimensions built on the standard) are listed in [Known-Implementations](Known-Implementations.md); the reference implementations at the time of writing come from the Orkestron ecosystem, including AISMM (the FCD origin) and the Meta-Orchestrator State (the reference Dimension consuming the world-model library).
+The Vercy project publishes the standard, the example library, FCD and the process palette. Implementations (products, runtimes, Dimensions built on the standard) are listed in [Known-Implementations](Known-Implementations.md); the reference implementations at the time of writing are AISMM (the FCD origin) and the Meta-Orchestrator State (the reference Dimension consuming the world-model library).

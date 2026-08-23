@@ -9,7 +9,7 @@
 **Status:** Working Draft  
 **Normative References:** MUC, [Validation](../02-architecture/Validation.md), [Change-Process](../01-constitution/Change-Process.md), [Contract](../04-core-concepts/Contract.md)  
 **Informative References:** [Conflict-Resolution](../03-federation/Conflict-Resolution.md), [AI-Agent-Guide](../07-guides/AI-Agent-Guide.md), [Traceability](../02-architecture/Traceability.md)  
-**Copyright:** © Orkestron.AI  
+**Copyright:** © Vercy  
 **License:** Apache-2.0
 
 ---

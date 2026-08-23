@@ -9,7 +9,7 @@
 **Status:** Working Draft  
 **Normative References:** [MMAS-Core](../02-architecture/MMAS-Core.md), [Versioning](../02-architecture/Versioning.md), [MMAS-Interchange](../02-architecture/MMAS-Interchange.md), [Event](../04-core-concepts/Event.md), [Traceability](../02-architecture/Traceability.md), RFC 2119  
 **Informative References:** [Migration from v1](../07-guides/Migration-from-v1.md), [Naming-Conventions](../02-architecture/Naming-Conventions.md)  
-**Copyright:** © Orkestron.AI  
+**Copyright:** © Vercy  
 **License:** Apache-2.0
 
 ---

@@ -9,7 +9,7 @@
 **Status:** Working Draft  
 **Normative References:** MUC, MMAS, MUFP  
 **Informative References:** [Object](../04-core-concepts/Object.md), [Relationship](../04-core-concepts/Relationship.md), [Lifecycle](../04-core-concepts/Lifecycle.md), [Traceability](../02-architecture/Traceability.md)  
-**Copyright:** © Orkestron.AI  
+**Copyright:** © Vercy  
 **License:** Apache-2.0
 
 ---

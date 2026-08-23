@@ -9,7 +9,7 @@
 **Status:** Working Draft  
 **Normative References:** MUC, MMAS, MUFP  
 **Informative References:** Registered-Meta-Models, Compatibility-Matrix, Certification, Known-Implementations  
-**Copyright:** © Orkestron.AI  
+**Copyright:** © Vercy  
 **License:** Apache-2.0  
 
 ---

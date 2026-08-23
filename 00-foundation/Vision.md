@@ -9,7 +9,7 @@
 **Status:** Working Draft  
 **Normative References:** None  
 **Informative References:** [Principles](../00-foundation/Principles.md), [Meta-Universe Constitution](../01-constitution/Meta-Universe-Constitution.md)  
-**Copyright:** © Orkestron.AI  
+**Copyright:** © Vercy  
 **License:** Apache-2.0
 
 ---

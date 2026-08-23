@@ -9,7 +9,7 @@
 **Status:** Working Draft  
 **Normative References:** None  
 **Informative References:** [Vision](../00-foundation/Vision.md), [Principles](../00-foundation/Principles.md), [Definitions](../01-constitution/Definitions.md)  
-**Copyright:** © Orkestron.AI  
+**Copyright:** © Vercy  
 **License:** Apache-2.0
 
 ---

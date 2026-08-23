@@ -9,7 +9,7 @@
 **Status:** Working Draft  
 **Normative References:** MUC, [MUFP](../03-federation/MUFP.md), [MUFP-Messages](../03-federation/MUFP-Messages.md), [Trust-Model](../03-federation/Trust-Model.md), [Consent-and-Disclosure](../03-federation/Consent-and-Disclosure.md), [MMAS-Interchange](../02-architecture/MMAS-Interchange.md), RFC 2119  
 **Informative References:** [Identity-Binding](../03-federation/Identity-Binding.md), [Conflict-Resolution](../03-federation/Conflict-Resolution.md), [Traceability](../02-architecture/Traceability.md)  
-**Copyright:** © Orkestron.AI  
+**Copyright:** © Vercy  
 **License:** Apache-2.0
 
 ---

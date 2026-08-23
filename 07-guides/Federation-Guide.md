@@ -9,7 +9,7 @@
 **Status:** Working Draft  
 **Normative References:** MUFP, MUC, MMAS  
 **Informative References:** Getting-Started, Create-a-New-Meta-Model, AI-Agent-Guide  
-**Copyright:** © Orkestron.AI  
+**Copyright:** © Vercy  
 **License:** Apache-2.0  
 
 ---

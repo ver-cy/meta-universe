@@ -9,7 +9,7 @@
 **Status:** Working Draft  
 **Normative References:** Meta-Universe Constitution (MUC), MMAS-Core, Versioning, Data-Portability-and-Access
 **Informative References:** Extension-Model, MMAS-Conformance, Meta-Universe Federation Protocol (MUFP), Model-Traversal-and-Layout, Data-Mastership  
-**Copyright:** © Orkestron.AI  
+**Copyright:** © Vercy  
 **License:** Apache-2.0
 
 ---

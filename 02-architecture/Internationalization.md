@@ -9,7 +9,7 @@
 **Status:** Working Draft  
 **Normative References:** [Naming-Conventions](../02-architecture/Naming-Conventions.md), [MMAS-Interchange](../02-architecture/MMAS-Interchange.md), [MMAS-Core](../02-architecture/MMAS-Core.md), BCP 47, RFC 2119  
 **Informative References:** [Traceability](../02-architecture/Traceability.md), [Projection](../04-core-concepts/Projection.md)  
-**Copyright:** © Orkestron.AI  
+**Copyright:** © Vercy  
 **License:** Apache-2.0
 
 ---

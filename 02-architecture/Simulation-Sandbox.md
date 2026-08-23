@@ -9,7 +9,7 @@
 **Status:** Working Draft  
 **Normative References:** MUC, [Projection](../04-core-concepts/Projection.md), [Event](../04-core-concepts/Event.md), [Change-Process](../01-constitution/Change-Process.md), [Policy-Consistency](../02-architecture/Policy-Consistency.md)  
 **Informative References:** [Provenance-Graph](../02-architecture/Provenance-Graph.md), [Validation](../02-architecture/Validation.md)  
-**Copyright:** © Orkestron.AI  
+**Copyright:** © Vercy  
 **License:** Apache-2.0
 
 ---

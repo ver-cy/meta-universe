@@ -9,7 +9,7 @@
 **Status:** Working Draft  
 **Normative References:** [Traceability](../02-architecture/Traceability.md), [Event](../04-core-concepts/Event.md), [MMAS-Core](../02-architecture/MMAS-Core.md), RFC 2119  
 **Informative References:** [MMAS-Interchange](../02-architecture/MMAS-Interchange.md), [Contract](../04-core-concepts/Contract.md), [Projection](../04-core-concepts/Projection.md)  
-**Copyright:** © Orkestron.AI  
+**Copyright:** © Vercy  
 **License:** Apache-2.0
 
 ---

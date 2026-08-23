@@ -9,7 +9,7 @@
 **Status:** Working Draft  
 **Normative References:** MUC, MMAS, MUFP  
 **Informative References:** Federation-Guide, Best-Practices, Design-Recommendations  
-**Copyright:** © Orkestron.AI  
+**Copyright:** © Vercy  
 **License:** Apache-2.0  
 
 ---
@@ -50,9 +50,9 @@ The crucial shift is that the **LLM becomes a reasoning engine**, not the store 
 
 ---
 
-# 1b. Orkestron Alignment
+# 1b. Layered Alignment
 
-The reasoning loop maps onto the Orkestron view of intelligent systems, in which each capability lives in its own managed layer:
+The reasoning loop maps onto a layered view of intelligent systems, in which each capability lives in its own managed layer:
 
 - **LLM** — the *ability to reason*. General inference, language and pattern competence.
 - **AISMM / Domain Meta-Models** — *the domain*. What exists, how it relates, what events mean.

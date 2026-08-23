@@ -65,7 +65,7 @@ This project follows the evolution and versioning rules defined in
   a **`status` lifecycle field** (`active` / `declared` / `suspended` /
   `retired`), making "mastership decided, flow not yet built" a lawful,
   visible, validated state instead of hidden debt.
-- **Case studies** (Informative, `06-ecosystem/`): [The Orkestron Ecosystem](06-ecosystem/Case-Study-Orkestron-Ecosystem.md)
+- **Case studies** (Informative, `06-ecosystem/`): [Axiacracy / Meta-Orchestrator State](06-ecosystem/Case-Study-Axiacracy-MOS.md)
   (MU-V2-ECO-010): a production ecosystem of meta-models (AISMM, PLMM, BKM,
   agent contracts) and federated realm projections; and
   [Axiacracy / Meta-Orchestrator State](06-ecosystem/Case-Study-Axiacracy-MOS.md)

@@ -9,7 +9,7 @@
 **Status:** Working Draft  
 **Normative References:** None  
 **Informative References:** [Getting-Started](../07-guides/Getting-Started.md), [Create-a-New-Meta-Model](../07-guides/Create-a-New-Meta-Model.md)  
-**Copyright:** © Orkestron.AI  
+**Copyright:** © Vercy  
 **License:** Apache-2.0
 
 ---

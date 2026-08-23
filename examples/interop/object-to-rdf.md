@@ -9,7 +9,7 @@
 **Status:** Working Draft  
 **Normative References:** None  
 **Informative References:** [MMAS-Interchange](../../02-architecture/MMAS-Interchange.md), [Object](../../04-core-concepts/Object.md), [Projection](../../04-core-concepts/Projection.md), [Semantic-Mapping](../../03-federation/Semantic-Mapping.md)  
-**Copyright:** © Orkestron.AI  
+**Copyright:** © Vercy  
 **License:** Apache-2.0
 
 ---

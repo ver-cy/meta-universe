@@ -9,7 +9,7 @@
 **Status:** Working Draft  
 **Normative References:** MUC, MUFP  
 **Informative References:** [Object](../04-core-concepts/Object.md), [Projection](../04-core-concepts/Projection.md), [Universe](../04-core-concepts/Universe.md)  
-**Copyright:** © Orkestron.AI  
+**Copyright:** © Vercy  
 **License:** Apache-2.0
 
 ---

@@ -9,7 +9,7 @@
 **Status:** Working Draft  
 **Normative References:** MUC, MMAS, MUFP, ../04-core-concepts/Event.md  
 **Informative References:** Synchronization.md, Semantic-Mapping.md, Trust-Model.md  
-**Copyright:** © Orkestron.AI  
+**Copyright:** © Vercy  
 **License:** Apache-2.0
 
 ---

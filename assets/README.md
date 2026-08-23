@@ -9,7 +9,7 @@
 **Status:** Working Draft  
 **Normative References:** None  
 **Informative References:** [Reference-Diagrams](../05-reference-architecture/Reference-Diagrams.md), [MUDL](../05-reference-architecture/MUDL.md)  
-**Copyright:** © Orkestron.AI  
+**Copyright:** © Vercy  
 **License:** Apache-2.0
 
 ---

@@ -9,7 +9,7 @@
 **Status:** Working Draft  
 **Normative References:** MMAS (Naming Conventions)  
 **Informative References:** Reference Repository, Anti-Patterns  
-**Copyright:** © Orkestron.AI  
+**Copyright:** © Vercy  
 **License:** Apache-2.0
 
 ---

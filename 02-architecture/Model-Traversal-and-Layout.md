@@ -9,7 +9,7 @@
 **Status:** Working Draft  
 **Normative References:** MMAS-Core, MMAS-Package, Versioning, Validation, Data-Mastership  
 **Informative References:** Traceability, AI-Agent-Guide, Repository-Structure  
-**Copyright:** © Orkestron.AI  
+**Copyright:** © Vercy  
 **License:** Apache-2.0
 
 ---

@@ -9,7 +9,7 @@
 **Status:** Working Draft  
 **Normative References:** Model-Traversal-and-Layout, Data-Mastership, Validation  
 **Informative References:** AI-Agent-Guide, AI-Integration-Patterns, MMAS-Package, Overview  
-**Copyright:** © Orkestron.AI  
+**Copyright:** © Vercy  
 **License:** Apache-2.0
 
 ---
@@ -99,7 +99,7 @@ An agent that cannot tell what it may edit must not edit. This is [ARCH-017 §11
 
 # 8. Worked reality
 
-Two production models exercise every recipe above and are worth reading as executable documentation: the Orkestron.AI product model (write-back projection to a public site with a hash drift check and a daily alerting watch) and the DevTeam.Games platform model (external source-code mirrors, a retired system of record kept as frozen evidence, a proprietary never-publish dataset). See the [Orkestron case study](../06-ecosystem/Case-Study-Orkestron-Ecosystem.md).
+Two production models exercise every recipe above and are worth reading as executable documentation: a commercial product model (write-back projection to a public site with a hash drift check and a daily alerting watch) and a platform model (external source-code mirrors, a retired system of record kept as frozen evidence, a proprietary never-publish dataset).
 
 ---
 

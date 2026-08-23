@@ -9,7 +9,7 @@
 **Status:** Working Draft  
 **Normative References:** None  
 **Informative References:** [Security-Model](../03-federation/Security-Model.md), [Trust-Model](../03-federation/Trust-Model.md), [Decentralized-Registry](../06-ecosystem/Decentralized-Registry.md), [MMAS-Interchange](../02-architecture/MMAS-Interchange.md), [Consent-and-Disclosure](../03-federation/Consent-and-Disclosure.md)  
-**Copyright:** © Orkestron.AI  
+**Copyright:** © Vercy  
 **License:** Apache-2.0
 
 ---

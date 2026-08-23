@@ -9,7 +9,7 @@
 **Status:** Working Draft  
 **Normative References:** MUC, MMAS, MUFP  
 **Informative References:** Compatibility-Matrix, Certification, Known-Implementations  
-**Copyright:** © Orkestron.AI  
+**Copyright:** © Vercy  
 **License:** Apache-2.0  
 
 ---
@@ -263,12 +263,8 @@ The registry defined above is live as machine-readable data in [`registry/`](reg
 | Model | Publisher | Version | Kind | Source | Status |
 |-------|-----------|---------|------|--------|--------|
 | Vercy world-model catalogue | Vercy project | 0.2.0 | Example library (the world of people and events on Earth: 112 vendor-neutral models in 15 clusters, MMAS cards with own bundles and layers) | [world-models](https://github.com/ver-cy/world-models) | Draft |
-| AISMM (AI-driven Software Meta-Model) | Vercy project | 3.2.0 | Domain Meta-Model (software product) | [software-meta-model](https://github.com/ver-cy/software-meta-model) | Stable |
-| PLMM (Product Landscape Meta-Model) | Orkestron.AI | 0.1 | Enterprise Meta-Model (product landscape, federates AISMM) | [product-landscape-meta-model](https://github.com/orkestron-ai/product-landscape-meta-model) | Draft |
-| BKM (Base Knowledge Model) | Orkestron.AI | 0.4 | Foundation Meta-Model (professional knowledge as Semantic Packages) | private at time of writing | Draft |
-| MOS namespace family (Axiacracy / Meta-Orchestrator State) | Orkestron.AI | 0.1 | Government Meta-Models (38 namespaces: value substrate, polity, society, economy, civilization, runtime) | [meta-orchestrator-state](https://github.com/orkestron-ai/meta-orchestrator-state) | Draft |
 
-Context for these entries: [Case Study: The Orkestron Ecosystem](Case-Study-Orkestron-Ecosystem.md) and [Case Study: Axiacracy and the Meta-Orchestrator State](Case-Study-Axiacracy-MOS.md).
+Context for these entries: [Case Study: Axiacracy and the Meta-Orchestrator State](Case-Study-Axiacracy-MOS.md).
 
 ---
 

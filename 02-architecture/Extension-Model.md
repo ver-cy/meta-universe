@@ -9,7 +9,7 @@
 **Status:** Working Draft  
 **Normative References:** Meta-Universe Constitution (MUC), MMAS-Core, MMAS-Package  
 **Informative References:** Versioning, Naming-Conventions, [Meta-Model-Composition](Meta-Model-Composition.md)  
-**Copyright:** © Orkestron.AI  
+**Copyright:** © Vercy  
 **License:** Apache-2.0
 
 ---

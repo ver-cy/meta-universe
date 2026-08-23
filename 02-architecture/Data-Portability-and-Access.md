@@ -9,7 +9,7 @@
 **Status:** Working Draft
 **Normative References:** MMAS-Core, MMAS-Package, MMAS-Interchange, Model-Traversal-and-Layout, Data-Mastership, Validation
 **Informative References:** Traceability, Provenance-Graph, Security-Model
-**Copyright:** © Orkestron.AI
+**Copyright:** © Vercy
 **License:** Apache-2.0
 
 ---

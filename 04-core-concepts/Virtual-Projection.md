@@ -9,7 +9,7 @@
 **Status:** Working Draft  
 **Normative References:** MUC, [Projection](../04-core-concepts/Projection.md), [Event](../04-core-concepts/Event.md), [Synchronization](../03-federation/Synchronization.md), [Contract](../04-core-concepts/Contract.md)  
 **Informative References:** [Traceability](../02-architecture/Traceability.md), [Validation](../02-architecture/Validation.md)  
-**Copyright:** © Orkestron.AI  
+**Copyright:** © Vercy  
 **License:** Apache-2.0
 
 ---

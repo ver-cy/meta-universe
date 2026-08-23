@@ -9,7 +9,7 @@
 **Status:** Working Draft  
 **Normative References:** [MUFP](../03-federation/MUFP.md), [MUFP-Messages](../03-federation/MUFP-Messages.md), [MMAS-Interchange](../02-architecture/MMAS-Interchange.md), RFC 8615 (Well-Known URIs), RFC 2119  
 **Informative References:** [Registered-Meta-Models](../06-ecosystem/Registered-Meta-Models.md), [Decentralized-Registry](../06-ecosystem/Decentralized-Registry.md), [Compatibility-Matrix](../06-ecosystem/Compatibility-Matrix.md)  
-**Copyright:** © Orkestron.AI  
+**Copyright:** © Vercy  
 **License:** Apache-2.0
 
 ---

@@ -9,7 +9,7 @@
 **Status:** Working Draft  
 **Normative References:** None  
 **Informative References:** [Registered-Meta-Models](../06-ecosystem/Registered-Meta-Models.md), [Certification](../06-ecosystem/Certification.md), W3C Decentralized Identifiers (DID), W3C Verifiable Credentials (VC)  
-**Copyright:** © Orkestron.AI  
+**Copyright:** © Vercy  
 **License:** Apache-2.0
 
 ---

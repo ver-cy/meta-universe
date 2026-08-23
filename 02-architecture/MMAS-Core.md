@@ -9,7 +9,7 @@
 **Status:** Working Draft  
 **Normative References:** Meta-Universe Constitution (MUC), Versioning, Naming-Conventions, Validation, MMAS-Package, MMAS-Conformance  
 **Informative References:** Meta-Universe Federation Protocol (MUFP)  
-**Copyright:** © Orkestron.AI  
+**Copyright:** © Vercy  
 **License:** Apache-2.0
 
 ---

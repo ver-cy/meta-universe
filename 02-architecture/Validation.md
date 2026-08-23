@@ -9,7 +9,7 @@
 **Status:** Working Draft  
 **Normative References:** MUC, [MMAS-Core](../02-architecture/MMAS-Core.md), [MMAS-Conformance](../02-architecture/MMAS-Conformance.md), [MMAS-Interchange](../02-architecture/MMAS-Interchange.md)  
 **Informative References:** [Certification](../06-ecosystem/Certification.md), [Compatibility-Matrix](../06-ecosystem/Compatibility-Matrix.md), [Requirements Index](../REQUIREMENTS-INDEX.md)  
-**Copyright:** © Orkestron.AI  
+**Copyright:** © Vercy  
 **License:** Apache-2.0
 
 ---

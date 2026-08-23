@@ -9,7 +9,7 @@
 **Status:** Working Draft  
 **Normative References:** Meta-Universe Constitution (MUC), MMAS-Core, [Extension-Model](Extension-Model.md), [Semantic-Mapping](../03-federation/Semantic-Mapping.md)  
 **Informative References:** [Relationship](../04-core-concepts/Relationship.md), [Object](../04-core-concepts/Object.md), [Projection](../04-core-concepts/Projection.md), [Connector-Catalogue](../06-ecosystem/Connector-Catalogue.md), [External-Models-Registry](../06-ecosystem/External-Models-Registry.md)  
-**Copyright:** © Orkestron.AI  
+**Copyright:** © Vercy  
 **License:** Apache-2.0
 
 ---

@@ -8,7 +8,7 @@ the project is actually run today*.
 ## 1. Guiding principle
 
 Meta-Universe aims to be an **organization-independent** open standard, like the
-work of W3C/IETF/ISO. It is currently **steward-led** by Orkestron.AI during the
+work of W3C/IETF/ISO. It is currently **steward-led** by Vercy during the
 Working Draft phase, with the explicit intent to migrate to neutral, multi-party
 governance as adoption grows. Steward-led today; community-governed by design.
 
