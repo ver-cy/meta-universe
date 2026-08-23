@@ -66,14 +66,10 @@ This project follows the evolution and versioning rules defined in
   `retired`), making "mastership decided, flow not yet built" a lawful,
   visible, validated state instead of hidden debt.
 - **Case studies** (Informative, `06-ecosystem/`): [Axiacracy / Meta-Orchestrator State](06-ecosystem/Case-Study-Axiacracy-MOS.md)
-  (MU-V2-ECO-010): a production ecosystem of meta-models (AISMM, PLMM, BKM,
-  agent contracts) and federated realm projections; and
-  [Axiacracy / Meta-Orchestrator State](06-ecosystem/Case-Study-Axiacracy-MOS.md)
   (MU-V2-ECO-011): a whole polity modelled as one Dimension with 38 namespaces,
   the largest known application of the standard.
 - **Seed entries** (Informative) in [Registered-Meta-Models](06-ecosystem/Registered-Meta-Models.md) §17:
-  first concrete registry references (AISMM 3.1, PLMM 0.1, BKM 0.4, the MOS
-  namespace family).
+  first concrete registry references (the MOS namespace family).
 - Case-study cross-references from [Known-Implementations](06-ecosystem/Known-Implementations.md) §8
   and the README Ecosystem section.
 

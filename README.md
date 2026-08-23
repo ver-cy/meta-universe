@@ -198,7 +198,7 @@ Meta-Universe is designed as a **family of repositories**:
 | **meta-universe-reference-models** *(planned)* | Full reference meta-models (Employee, Organization, Product, AI Agent, …) |
 | [software-meta-model](https://github.com/ver-cy/software-meta-model) | AISMM 3.2, a domain meta-model and MMAS 2.1 portable package |
 | [product-landscape-meta-model](https://github.com/ver-cy/plmm) | The federation layer above AISMM: a whole product landscape as one model |
-| [meta-orchestrator-state](https://github.com/ver-cy/meta-orchestrator-state) | A polity modelled as one Dimension (Axiacracy / MOS): the largest known application |
+| meta-orchestrator-state | A polity modelled as one Dimension (Axiacracy / MOS): the largest known application |
 | software-agents-contracts | Contract → Protocol → Deliverable specification for AI agents |
 
 Compatible domain meta-models include AISMM, the Employee Meta-Model, the Enterprise Landscape Meta-Model and the Product Landscape Meta-Model.

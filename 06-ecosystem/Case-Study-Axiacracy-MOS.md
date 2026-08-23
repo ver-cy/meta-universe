@@ -18,7 +18,7 @@
 
 This case study documents the largest known application of Meta-Universe concepts: modelling an **entire polity** (a state) as one Meta-Universe Dimension.
 
-The subject is the **Meta-Orchestrator State (MOS)**: a simulation of a state governed by balancing multidimensional flows of value rather than by taxation, populated by 2,000 to 3,000 autonomous AI-agent citizens. Its governing doctrine is **Axiacracy** ("governance by value"), published for a human audience at [axiacra.cy](https://axiacra.cy); the methodology and simulation blueprint are open at [ver-cy/meta-orchestrator-state](https://github.com/ver-cy/meta-orchestrator-state) (Apache-2.0).
+The subject is the **Meta-Orchestrator State (MOS)**: a simulation of a state governed by balancing multidimensional flows of value rather than by taxation, populated by 2,000 to 3,000 autonomous AI-agent citizens. Its governing doctrine is **Axiacracy** ("governance by value"), published for a human audience at [axiacra.cy](https://axiacra.cy); the methodology and simulation blueprint are open at `ver-cy/meta-orchestrator-state` (Apache-2.0).
 
 Why it belongs in this specification:
 
@@ -166,6 +166,6 @@ Meta-Universe reading: Objects in a large universe do not need uniform fidelity.
 # 11. Status and references
 
 - Doctrine, for a human audience, in 20 languages: [axiacra.cy](https://axiacra.cy) (Understand · The Value Vector · The System §1-24 · The Charter · Lineage & Critique · The Simulation).
-- Methodology and simulation blueprint: [ver-cy/meta-orchestrator-state](https://github.com/ver-cy/meta-orchestrator-state), split into `methodology/` (a portable blueprint, applicable to a real polity with humans) and `implementation/` (the agent simulation), with the namespace register `methodology/meta-models.csv`.
+- Methodology and simulation blueprint: `ver-cy/meta-orchestrator-state`, split into `methodology/` (a portable blueprint, applicable to a real polity with humans) and `implementation/` (the agent simulation), with the namespace register `methodology/meta-models.csv`.
 - Value theory substrate (VMT): [aeilus.tech](https://aeilus.tech).
 - Maturity, in the vocabulary of [Known-Implementations](Known-Implementations.md) §7: **Experimental** (methodology in open draft; simulation in design; doctrine site in production).
