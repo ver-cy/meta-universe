@@ -1,2 +1,3 @@
 id,name,publisher,version,kind,status,license,access,domains,source,registered
 vercy.world-models,Vercy world-model catalogue,Vercy project,0.2.0,example-library,draft,Apache-2.0,public,world;society;state;economy;security;property;health;democracy,https://github.com/ver-cy/world-models,2026-07-31
+vercy.enterprise-models,Vercy enterprise-model catalogue,Vercy project,0.1.0,enterprise,draft,Apache-2.0,public,enterprise;organization;work;commerce;technology;governance,https://github.com/ver-cy/enterprise-models,2026-10-21

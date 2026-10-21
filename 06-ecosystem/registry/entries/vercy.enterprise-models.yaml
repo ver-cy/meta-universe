@@ -1,0 +1,34 @@
+# Registered Meta-Model entry (validates against ../entry.schema.json)
+id: vercy.enterprise-models
+name: Vercy enterprise-model catalogue
+publisher: Vercy project
+owner: Vercy project
+steward: Vercy project
+version: 0.1.0
+kind: enterprise
+status: draft
+license: Apache-2.0
+access: public
+source:
+  repository: https://github.com/ver-cy/enterprise-models
+  ref: main
+conformance:
+  muc: "2.0"
+  mmas: "2.0"
+purpose: >
+  A vendor-neutral catalogue of 28 enterprise meta-models in 5 clusters
+  (structure and identity, work and delivery, commercial relations, technology
+  and data, governance and insight) with startup, scaleup and enterprise
+  assembly profiles, so that any organization can assemble its own conformant
+  universe at its own grain.
+domains: [enterprise, organization, work, commerce, technology, governance]
+primary_namespace: enterprise
+dependencies: [vercy.world-models]
+imports: [w3c-org]
+docs: https://github.com/ver-cy/enterprise-models#readme
+registered: "2026-10-21"
+notes: >
+  Specializes world-model cards by reference and binds three registered models
+  whole: organizational structure (OUMM), software product (AISMM) and software
+  product landscape (PLMM). Models are scale-neutral; scale lives only in the
+  assembly profiles.

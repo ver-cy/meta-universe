@@ -263,6 +263,7 @@ The registry defined above is live as machine-readable data in [`registry/`](reg
 | Model | Publisher | Version | Kind | Source | Status |
 |-------|-----------|---------|------|--------|--------|
 | Vercy world-model catalogue | Vercy project | 0.2.0 | Example library (the world of people and events on Earth: 112 vendor-neutral models in 15 clusters, MMAS cards with own bundles and layers) | [world-models](https://github.com/ver-cy/world-models) | Draft |
+| Vercy enterprise-model catalogue | Vercy project | 0.1.0 | Enterprise (28 vendor-neutral enterprise meta-models in 5 clusters with startup, scaleup and enterprise assembly profiles) | [enterprise-models](https://github.com/ver-cy/enterprise-models) | Draft |
 
 Context for these entries: [Case Study: Axiacracy and the Meta-Orchestrator State](Case-Study-Axiacracy-MOS.md).
 
