@@ -27,7 +27,7 @@ Search [`registered-models.csv`](registered-models.csv) by kind, domain or keywo
 Anyone may register, including commercial publishers, under the [Open Registration Policy](../Open-Registration-Policy.md) (ECO-013); the interfaces are in the [Registry Federation Interface](../Registry-Federation-Interface.md) (ECO-014).
 
 1. Copy an existing file in `entries/` as a template; fill every required field of [`entry.schema.json`](entry.schema.json) and add a `proof` block (domain, repository or DID).
-2. Publish the proof token: `https://{domain}/.well-known/vercy-verification.txt`, a token file in your repository, or a DID signature.
+2. Publish the proof token printed by `vercy register token {your-id}`: `https://{domain}/.well-known/vercy-verification.txt`, a token file in your repository, or a DID signature.
 3. Check the entry locally: `vercy register check entries/{your-id}.yaml` (install with `pip install "vercy[yaml]"`). It reports every failure and exits non-zero, so it also runs in CI.
 4. Add the matching row to [`registered-models.csv`](registered-models.csv) and open a pull request. An entry that passes the check and the proof is published at the **Registered** trust level without pre-moderation.
 5. Registration does not transfer ownership and can be withdrawn by the Owner at any time (status `retired`; entries are never deleted, so identifiers stay resolvable).

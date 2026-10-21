@@ -104,6 +104,10 @@ of the entries it harvests and labels each one with its origin registry.
 | `repository` | commits the token at the path named in the submission | the file exists at the registered `source.ref` |
 | `did` | signs the submission with the key of `universe.did` | the signature verifies against the DID document |
 
+The token is public and derived from the entry id: `vercy-register-` followed by the first 32 hex
+characters of SHA-256 of `vercy-register:{id}` (the reference command `vercy register token {id}`
+prints it). It does not need to be secret: what it proves is control of the place it is published in.
+
 Proof is re-checked on every harvest (Policy Section 6).
 
 ---
