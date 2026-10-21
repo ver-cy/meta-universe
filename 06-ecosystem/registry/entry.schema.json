@@ -19,10 +19,10 @@
     "version": { "type": "string", "description": "Current version of the model (semver or the model's own scheme)." },
     "kind": {
       "type": "string",
-      "enum": ["foundation", "domain", "enterprise", "industry", "government", "community", "example-library"],
-      "description": "Registry scope class per Registered-Meta-Models section 2."
+      "enum": ["foundation", "domain", "enterprise", "industry", "government", "community", "example-library", "registry"],
+      "description": "Registry scope class per Registered-Meta-Models section 2. registry registers a whole registry of Meta-Models, read through the Registry Federation Interface (ECO-014)."
     },
-    "status": { "type": "string", "enum": ["draft", "stable", "deprecated", "retired"] },
+    "status": { "type": "string", "enum": ["draft", "stable", "suspended", "deprecated", "retired"], "description": "Lifecycle per the Open Registration Policy (ECO-013) section 9; suspended is set by the register, never by the registrant." },
     "license": { "type": "string", "description": "SPDX identifier where possible (e.g. Apache-2.0)." },
     "access": {
       "type": "string",
@@ -61,6 +61,30 @@
     "imports": { "type": "array", "items": { "type": "string" }, "description": "External standards imported (names as in external-models.csv)." },
     "docs": { "type": "string", "format": "uri", "description": "Human documentation entry point." },
     "fingerprint": { "type": "string", "description": "Self-declared Semantic Fingerprint of the registered version." },
+    "proof": {
+      "type": "object",
+      "required": ["method"],
+      "additionalProperties": false,
+      "description": "Proof of control of the registered source (ECO-013 section 6, ECO-014 I3). Required for registrations made under the Open Registration Policy.",
+      "properties": {
+        "method": { "type": "string", "enum": ["domain", "repository", "did"] },
+        "domain": { "type": "string", "description": "For method domain: the domain serving /.well-known/vercy-verification.txt." },
+        "path": { "type": "string", "description": "For method repository: the path of the token file inside source.repository at source.ref." },
+        "did": { "type": "string", "description": "For method did: the Decentralized Identifier whose key signs the submission." }
+      }
+    },
+    "harvest": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "For kind registry: where and how often the register reads the publisher's registry (ECO-014 I2, I5).",
+      "properties": {
+        "discovery": { "type": "string", "format": "uri", "description": "URL of the publisher's /.well-known/meta-universe.json." },
+        "catalogue": { "type": "string", "format": "uri", "description": "Optional catalogue of entries, one entry per line (JSONL), for large registries." },
+        "format": { "type": "string", "enum": ["vercy-entry/1"] },
+        "cadence": { "type": "string", "pattern": "^P(T?[0-9]+[HDW])+$", "description": "ISO 8601 duration between harvests, from PT1H to P30D." }
+      }
+    },
+    "card_supplement": { "type": "string", "format": "uri", "description": "Optional card supplement that fills card sections the model does not carry; it never edits the registered source." },
     "registered": { "type": "string", "format": "date" },
     "notes": { "type": "string" }
   }

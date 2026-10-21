@@ -31,4 +31,4 @@ Search [`registered-models.csv`](registered-models.csv) by kind, domain or keywo
 
 ## Entry statuses
 
-`draft` (registered, evolving) · `stable` (versioned releases, change-controlled) · `deprecated` (superseded, pointer to successor) · `retired` (withdrawn by Owner; tombstone entry remains).
+`draft` (registered, evolving) · `stable` (versioned releases, change-controlled) · `suspended` (set by the register: source unreachable or proof failed) · `deprecated` (superseded, pointer to successor) · `retired` (withdrawn by Owner; tombstone entry remains).
